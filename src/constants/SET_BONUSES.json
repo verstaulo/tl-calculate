@@ -1,0 +1,372 @@
+{
+  "chief_commander_set": {
+    "4": {
+      "description": "Shield Block Chance 10% ▲",
+      "value_type": "static",
+      "value": {
+        "shield_block_chance_bonus": 10
+      }
+    },
+    "2": {
+      "description": "Damage Reduction 22 ▲",
+      "value_type": "static",
+      "value": {
+        "damage_reduction": 22
+      }
+    }
+  },
+  "ghost_wolf_set": {
+    "4": {
+      "description": "Off-Hand Weapon Attack Chance Boost 30% ▲",
+      "value_type": "static",
+      "value": {
+        "off_hand_weapon_attack_chance_bonus": 30
+      }
+    },
+    "2": {
+      "description": "Bonus Damage 22 ▲",
+      "value_type": "static",
+      "value": {
+        "damage_bonus": 22
+      }
+    }
+  },
+  "mother_nature_set": {
+    "4": {
+      "description": "Range 10% ▲",
+      "value_type": "static",
+      "value": {
+        "bonus_range": 10
+      }
+    },
+    "2": {
+      "description": "Weaken Duration 7.5 ▲",
+      "value_type": "static",
+      "value": {
+        "weaken_duration": 7.5
+      }
+    }
+  },
+  "imperator_set": {
+    "4": {
+      "description": "Mobility Skills Move Range 10% ▲",
+      "value_type": "static",
+      "value": {
+        "mobility_skills_move_range": 10
+      }
+    },
+    "2": {
+      "description": "Melee Heavy Attack Chance 150 ▲",
+      "value_type": "static",
+      "value": {
+        "melee_heavy_attack_chance": 150
+      }
+    }
+  },
+  "death_set": {
+    "4": {
+      "description": "Added Attack Speed 10% ▲",
+      "value_type": "static",
+      "value": {
+        "attack_speed_bonus": 10
+      }
+    },
+    "2": {
+      "description": "Critical Damage added by 21% ▲, it cannot be applied while other set critical damage effect is being applied.",
+      "value_type": "static",
+      "value": {
+        "critical_damage_bonus": 21
+      }
+    }
+  },
+  "transcended_one_set": {
+    "4": {
+      "description": "Skill Heal 25% ▲",
+      "value_type": "static",
+      "value": {
+        "skill_heal_bonus": 25
+      }
+    },
+    "2": {
+      "description": "Cooldown Speed 7,5% ▲",
+      "value_type": "static",
+      "value": {
+        "cooldown_speed": 7.5
+      }
+    }
+  },
+  "dimensional_chaos_set": {
+    "2": {
+      "description": "Stamina Regen 10 ▼",
+      "value_type": "static",
+      "value": {
+        "stamina_regen": -10
+      }
+    }
+  },
+  "world_tree_set": {
+    "4": {
+      "description": "Cooldown Speed 1% ▲ per 1,000 Max Mana. Cooldown Speed Max 20% ▲",
+      "value_type": "dynamic",
+      "value": {
+        "target_key": "cooldown_speed",
+        "target_key_count": 1,
+        "dependency_key": "max_mana",
+        "dependency_key_count": 1000,
+        "max_bonus": 20
+      }
+    },
+    "2": {
+      "description": "Max Mana 1500 ▲, Mana Regen 50 ▲",
+      "value_type": "static",
+      "value": {
+        "max_mana": 1500,
+        "mana_regen": 50
+      }
+    }
+  },
+  "sacred_vanquisher_set": {
+    "4": {
+      "description": " Skill Damage Resistance 150 ▲",
+      "value_type": "static",
+      "value": {
+        "skill_damage_resistance": 150
+      }
+    },
+    "2": {
+      "description": "Skill Damage over time 20% ▲",
+      "value_type": "static",
+      "value": {
+        "skill_damage_over_time": 20
+      }
+    }
+  },
+  "oracle_priest_set": {
+    "4": {
+      "description": "Incoming Heal 10% ▲, Incoming Heal10% ▲ to party members within 18m",
+      "value_type": "static",
+      "value": {
+        "incoming_heal": 10
+      }
+    },
+    "2": {
+      "description": "Melee, Ranged and Magic Defense 200 ▲, Melee, Ranged and Magic Evasion 200 ▲ to party members within 18m",
+      "value_type": "static",
+      "value": {
+        "melee_defense": 200,
+        "ranged_defense": 200,
+        "magic_defense": 200
+      }
+    }
+  },
+  "elder_set": {
+    "4": {
+      "description": "Skill Heal 30 % ▲",
+      "value_type": "static",
+      "value": {
+        "skill_heal_bonus": 30
+      }
+    },
+    "2": {
+      "description": "Skill Damage over time ▲4%, Every time you inflict Weaken, ▲12%(Up to 3 stacks), it cannot be applied while other set damage over time effect is being applied.",
+      "value_type": "static",
+      "value": {
+        "skill_damage_over_time": 4
+      }
+    }
+  },
+  "abyss_slayer_set": {
+    "4": {
+      "description": "Critical Hit 100 ▲. On dealing Critical Hits, Healing by 5% of damage dealt.",
+      "value_type": "static",
+      "value": {
+        "melee_critical_hit": 100,
+        "ranged_critical_hit": 100,
+        "magic_critical_hit": 100
+      }
+    },
+    "2": {
+      "description": "Max Damage 20 ▲",
+      "value_type": "static",
+      "value": {
+        "main_max_damage": 20
+      }
+    }
+  },
+  "wing_gale_set": {
+    "4": {
+      "description": "Critical Damage 15% ▲. Additional Critical Damage 1% ▲ per 1m away from the target. Critical Damage up to 40% ▲",
+      "value_type": "static",
+      "value": {
+        "critical_damage_bonus": 15
+      }
+    },
+    "2": {
+      "description": "Critical Hit 200 ▲",
+      "value_type": "static",
+      "value": {
+        "melee_critical_hit": 200,
+        "ranged_critical_hit": 200,
+        "magic_critical_hit": 200
+      }
+    }
+  },
+  "dawn_mist_set": {
+    "4": {
+      "description": "Bonus Damage 35 ▲",
+      "value_type": "static",
+      "value": {
+        "damage_bonus": 35
+      }
+    },
+    "2": {
+      "description": "Ranged Evasion 250 ▲, Magic Evasion 250 ▲",
+      "value_type": "static",
+      "value": {
+        "ranged_evasion": 250,
+        "magic_evasion": 250
+      }
+    }
+  },
+  "forgotten_assassin_set": {
+    "4": {
+      "description": "Melee, Ranged and Magic Critical Hit 110 ▲. Melee, Ranged and Magic Critical Hit 110 ▲ to party members within 18m",
+      "value_type": "static",
+      "value": {
+        "melee_critical_hit": 110,
+        "ranged_critical_hit": 110,
+        "magic_critical_hit": 110
+      }
+    },
+    "2": {
+      "description": "Melee, Ranged and Magic Evasion 110 ▲. Melee, Ranged and Magic Evasion 110 ▲ to party members within 18m",
+      "value_type": "static",
+      "value": {
+        "melee_evasion": 110,
+        "ranged_evasion": 110,
+        "magic_evasion": 110
+      }
+    }
+  },
+  "southern_admiral_set": {
+    "4": {
+      "description": "Attack Speed 6% ▲ , Attack Speed 6% ▲ to all party members within 18m.",
+      "value_type": "static",
+      "value": {
+        "attack_speed_bonus": 6
+      }
+    },
+    "2": {
+      "description": "Debuff Duration -3%. Debuff Duration -3% to all party members within 18m.",
+      "value_type": "static",
+      "value": {
+        "debuff_duration": 3
+      }
+    }
+  },
+  "imperial_tracker_set": {
+    "4": {
+      "description": "Buff Duration 12% ▲",
+      "value_type": "static",
+      "value": {
+        "buff_duration": 12
+      }
+    },
+    "2": {
+      "description": "Critical Damage 1% ▲, Every time you inflict Melee Critical Hit, Critical Damage 15% ▲ (Up to 10 stacks), it cannot be applied while other critical damage set effect is being applied.",
+      "value_type": "static",
+      "value": {
+        "critical_damage_bonus": 1
+      }
+    }
+  },
+  "nether_overwatcher_set": {
+    "4": {
+      "description": "Critical Damage 15% ▲, If there is no enemies within 5m, gain additional 10% ▲, it cannot be applied while other set critical damage effect is being applied.",
+      "value_type": "static",
+      "value": {
+        "critical_damage_bonus": 15
+      }
+    },
+    "2": {
+      "description": "Move Speed 15% ▲",
+      "value_type": "static",
+      "value": {
+        "move_speed_bonus": 15
+      }
+    }
+  },
+  "wraith_knight_set": {
+    "4": {
+      "description": "Melee Heavy Attack Chance 12 ▲ per 1,000 of Max Health (up to an additional 240).",
+      "value_type": "dynamic",
+      "value": {
+        "target_key": "melee_heavy_attack_chance",
+        "target_key_count": 12,
+        "dependency_key": "max_health",
+        "dependency_key_count": 1000,
+        "max_bonus": 240
+      }
+    },
+    "2": {
+      "description": "Max Health 2000 ▲",
+      "value_type": "static",
+      "value": {
+        "max_health": 2000
+      }
+    }
+  },
+  "holy_ghost_fighter_set": {
+    "4": {
+      "description": "Damage Reduction 20 ▲, Endurance 150 ▲",
+      "value_type": "static",
+      "value": {
+        "damage_reduction": 20,
+        "melee_endurance": 150,
+        "ranged_endurance": 150,
+        "magic_endurance": 150
+      }
+    },
+    "2": {
+      "description": "Buff Duration 10% ▲",
+      "value_type": "static",
+      "value": {
+        "buff_duration": 10
+      }
+    }
+  },
+  "skilled_veteran_set": {
+    "4": {
+      "description": "Damage Reduction 12 ▲. Damage Reduction 12 ▲ to party members within 18m",
+      "value_type": "static",
+      "value": {
+        "damage_reduction": 12
+      }
+    },
+    "2": {
+      "description": "Melee, Ranged and Magic Endurance 120 ▲. Melee, Ranged and Magic Endurance 120 ▲ to party members within 18m",
+      "value_type": "static",
+      "value": {
+        "melee_endurance": 120,
+        "ranged_endurance": 120,
+        "magic_endurance": 120
+      }
+    }
+  },
+  "palace_guard_set": {
+    "4": {
+      "description": "Critical Damage Reduction 25%",
+      "value_type": "static",
+      "value": {
+        "critical_damage_reduction": 25
+      }
+    },
+    "2": {
+      "description": "Shield Block Chance 8% ▲. Upon Shield Block, 2% ▲ (Up to 5 stacks)",
+      "value_type": "static",
+      "value": {
+        "shield_block_chance": 8
+      }
+    }
+  }
+}

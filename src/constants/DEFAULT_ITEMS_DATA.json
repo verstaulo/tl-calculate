@@ -1,0 +1,54 @@
+{
+  "main_weapon": {
+    "image": "./images/default_equipment_icons/Weapon.webp",
+    "title": "Select Primary Weapon"
+  },
+  "secondary_weapon": {
+    "image": "./images/default_equipment_icons/Weapon.webp",
+    "title": "Select Secondary Weapon"
+  },
+  "head": {
+    "image": "./images/default_equipment_icons/Head.webp",
+    "title": "Select Head"
+  },
+  "body": {
+    "image": "./images/default_equipment_icons/Body.webp",
+    "title": "Select Body"
+  },
+  "gloves": {
+    "image": "./images/default_equipment_icons/Gloves.webp",
+    "title": "Select Gloves"
+  },
+  "legs": {
+    "image": "./images/default_equipment_icons/Legs.webp",
+    "title": "Select Legs"
+  },
+  "boots": {
+    "image": "./images/default_equipment_icons/Boots.webp",
+    "title": "Select Boots"
+  },
+  "cloak": {
+    "image": "./images/default_equipment_icons/Cloak.webp",
+    "title": "Select Cloak"
+  },
+  "necklace": {
+    "image": "./images/default_equipment_icons/Necklace.webp",
+    "title": "Select Necklace"
+  },
+  "belt": {
+    "image": "./images/default_equipment_icons/Belt.webp",
+    "title": "Select Belt"
+  },
+  "bracelet": {
+    "image": "./images/default_equipment_icons/Bracelet.webp",
+    "title": "Select Bracelet"
+  },
+  "ring_first": {
+    "image": "./images/default_equipment_icons/Ring.webp",
+    "title": "Select Ring"
+  },
+  "ring_second": {
+    "image": "./images/default_equipment_icons/Ring.webp",
+    "title": "Select Ring"
+  }
+}

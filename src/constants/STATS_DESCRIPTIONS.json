@@ -1,0 +1,6 @@
+{
+	"strength": "The source of physical prowess. Provides strong Defense in addition to increasing Max Health, Health Regeneration, Max Damage and Min Damage.",
+	"dexterity": "The source of proficiency. Increases quickness and critical attacks in addition to Evasion and Max Damage.",
+	"wisdom": "The source of mental prowess. Increases Max Mana and Mana Regeneration in addition to cooldown abilities and Max Damage.",
+	"perception": "The source of sense-related abilities. Heightens awarness during battle. Increases the accuracy of attacks, CC effects, enhances time boost abilities Max Damage and Min Damage."
+}

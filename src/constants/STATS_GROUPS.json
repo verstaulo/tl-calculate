@@ -1,0 +1,89 @@
+{
+  "mainGroup": {
+    "weapons": [
+      "main_max_damage",
+      "main_min_damage",
+      "off_hand_max_damage",
+      "off_hand_min_damage",
+      "attack_speed",
+      "attack_range",
+      "shield_block_chance",
+      "off_hand_weapon_attack_chance"
+    ],
+    "defense": [
+      "melee_defense",
+      "ranged_defense",
+      "magic_defense"
+    ]
+  },
+  "secondaryGroup": {
+    "attack": [
+      "melee_hit",
+      "ranged_hit",
+      "magic_hit",
+      "melee_critical_hit",
+      "ranged_critical_hit",
+      "magic_critical_hit",
+      "skill_damage_boost",
+      "damage_bonus",
+      "buff_duration",
+      "melee_heavy_attack_chance",
+      "ranged_heavy_attack_chance",
+      "magic_heavy_attack_chance",
+      "critical_damage_bonus",
+      "shield_block_penetration_chance",
+      "skill_damage_over_time"
+    ],
+    "protection": [
+      "melee_evasion",
+      "ranged_evasion",
+      "magic_evasion",
+      "melee_endurance",
+      "ranged_endurance",
+      "magic_endurance",
+      "skill_damage_resistance",
+      "damage_reduction",
+      "debuff_duration",
+      "melee_heavy_attack_evasion",
+      "ranged_heavy_attack_evasion",
+      "magic_heavy_attack_evasion",
+      "critical_damage_reduction"
+    ],
+    "survival": [
+      "max_health",
+      "health_regen",
+      "max_mana",
+      "mana_regen",
+      "max_stamina",
+      "stamina_regen",
+      "mana_cost_efficiency",
+      "cooldown_speed",
+      "move_speed",
+      "attack_speed_bonus",
+      "skill_heal_bonus",
+      "incoming_heal",
+      "amitoi_heal",
+      "recovery_crystal_heal"
+    ],
+    "resist": [
+      "weaken_resistance",
+      "stun_resistance",
+      "petrification_resistance",
+      "sleep_resistance",
+      "silence_resistance",
+      "terror_resistance",
+      "bind_resistance",
+      "collision_resistance"
+    ],
+    "chance": [
+      "weaken_chance",
+      "stun_chance",
+      "petrification_chance",
+      "sleep_chance",
+      "silence_chance",
+      "terror_chance",
+      "bind_chance",
+      "collision_chance"
+    ]
+  }
+}

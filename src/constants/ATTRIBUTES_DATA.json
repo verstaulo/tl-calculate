@@ -1,0 +1,42 @@
+{
+  "strength": {
+    "title": "The source of physical prowess. Provides strong Defense in addition to increasing Max Health, Health Regeneration, Max Damage and Min Damage.",
+    "bonusList": {
+      "30": "30pt Max Health +750",
+      "40": "40pt Damage Reduction +15",
+      "50": "50pt Heavy Attack Chance +100",
+      "60": "60pt Max Health +950",
+      "70": "70pt Max Health +450 | Melee Defense +200 | Ranged Defense +200"
+    }
+  },
+  "dexterity": {
+    "title": "The source of proficiency. Increases quickness and critical attacks in addition to Evasion and Max Damage.",
+    "bonusList": {
+      "30": "30pt Critical Hit +100",
+      "40": "40pt Bonus Damage +15",
+      "50": "50pt Move Speed +5%",
+      "60": "60pt Critical Hit +120",
+      "70": "70pt Critical Hit +60 | Evasion +120"
+    }
+  },
+  "wisdom": {
+    "title": "The source of mental prowess. Increases Max Mana and Mana Regeneration in addition to cooldown abilities and Max Damage.",
+    "bonusList": {
+      "30": "30pt Max Mana +750",
+      "40": "40pt Debuff Duration -5%",
+      "50": "50pt Cooldown Speed +5%",
+      "60": "60pt Max Mana +900",
+      "70": "70pt Max Mana +450 | Mana Regen +120"
+    }
+  },
+  "perception": {
+    "title": "The source of sense-related abilities. Heightens awarness during battle. Increases the accuracy of attacks, CC effects, enhances time boost abilities and Max Damage.",
+    "bonusList": {
+      "30": "30pt Hit +100",
+      "40": "40pt Buff Duration +5%",
+      "50": "50pt Range +7.5%",
+      "60": "60pt Hit +120",
+      "70": "70pt Hit +60 | CC Chance +100"
+    }
+  }
+}
