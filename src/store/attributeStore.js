@@ -111,92 +111,92 @@ export const useAttributeStore = defineStore('attributeStore', () => {
         };
 
         if (attributeCount.value.strength >= 30) {
-            result.max_health += 750;
+            result.strength.max_health += 750;
         }
         if (attributeCount.value.strength >= 40) {
-            result.damage_reduction = 15;
+            result.strength.damage_reduction = 15;
         }
         if (attributeCount.value.strength >= 50) {
-            result.melee_heavy_attack_chance = 100;
-            result.ranged_heavy_attack_chance = 100;
-            result.magic_heavy_attack_chance = 100;
+            result.strength.melee_heavy_attack_chance = 100;
+            result.strength.ranged_heavy_attack_chance = 100;
+            result.strength.magic_heavy_attack_chance = 100;
         }
         if (attributeCount.value.strength >= 60) {
-            result.max_health += 950;
+            result.strength.max_health += 950;
         }
         if (attributeCount.value.strength >= 70) {
-            result.max_health += 450;
-            result.melee_defense += 200;
-            result.ranged_defense += 200;
+            result.strength.max_health += 450;
+            result.strength.melee_defense += 200;
+            result.strength.ranged_defense += 200;
         }
         if (attributeCount.value.dexterity >= 30) {
-            result.melee_critical_hit += 100;
-            result.ranged_critical_hit += 100;
-            result.magic_critical_hit += 100;
+            result.dexterity.melee_critical_hit += 100;
+            result.dexterity.ranged_critical_hit += 100;
+            result.dexterity.magic_critical_hit += 100;
         }
         if (attributeCount.value.dexterity >= 40) {
-            result.damage_bonus = 15;
+            result.dexterity.damage_bonus = 15;
         }
         if (attributeCount.value.dexterity >= 50) {
-            result.move_speed_bonus = 5;
+            result.dexterity.move_speed_bonus = 5;
         }
         if (attributeCount.value.dexterity >= 60) {
-            result.melee_critical_hit += 120;
-            result.ranged_critical_hit += 120;
-            result.magic_critical_hit += 120;
+            result.dexterity.melee_critical_hit += 120;
+            result.dexterity.ranged_critical_hit += 120;
+            result.dexterity.magic_critical_hit += 120;
         }
         if (attributeCount.value.dexterity >= 70) {
-            result.melee_critical_hit += 60;
-            result.ranged_critical_hit += 60;
-            result.magic_critical_hit += 60;
-            result.melee_evasion += 120;
-            result.ranged_evasion += 120;
-            result.magic_evasion += 120;
+            result.dexterity.melee_critical_hit += 60;
+            result.dexterity.ranged_critical_hit += 60;
+            result.dexterity.magic_critical_hit += 60;
+            result.dexterity.melee_evasion += 120;
+            result.dexterity.ranged_evasion += 120;
+            result.dexterity.magic_evasion += 120;
         }
         if (attributeCount.value.wisdom >= 30) {
-            result.max_mana += 750;
+            result.wisdom.max_mana += 750;
         }
         if (attributeCount.value.wisdom >= 40) {
-            result.debuff_duration = 5;
+            result.wisdom.debuff_duration = 5;
         }
         if (attributeCount.value.wisdom >= 50) {
-            result.cooldown_speed += 5;
+            result.wisdom.cooldown_speed += 5;
         }
         if (attributeCount.value.wisdom >= 60) {
-            result.max_mana += 900;
+            result.wisdom.max_mana += 900;
         }
         if (attributeCount.value.wisdom >= 70) {
-            result.max_mana += 450;
-            result.mana_regen += 120;
+            result.wisdom.max_mana += 450;
+            result.wisdom.mana_regen += 120;
         }
         if (attributeCount.value.perception >= 30) {
-            result.melee_hit += 100;
-            result.ranged_hit += 100;
-            result.magic_hit += 100;
+            result.perception.melee_hit += 100;
+            result.perception.ranged_hit += 100;
+            result.perception.magic_hit += 100;
         }
         if (attributeCount.value.perception >= 40) {
-            result.buff_duration += 5;
+            result.perception.buff_duration += 5;
         }
         if (attributeCount.value.perception >= 50) {
-            result.bonus_range = 7.5;
+            result.perception.bonus_range = 7.5;
         }
         if (attributeCount.value.perception >= 60) {
-            result.melee_hit += 120;
-            result.ranged_hit += 120;
-            result.magic_hit += 120;
+            result.perception.melee_hit += 120;
+            result.perception.ranged_hit += 120;
+            result.perception.magic_hit += 120;
         }
         if (attributeCount.value.perception >= 70) {
-            result.melee_hit += 60;
-            result.ranged_hit += 60;
-            result.magic_hit += 60;
-            result.weaken_chance += 100;
-            result.stun_chance += 100;
-            result.petrification_chance += 100;
-            result.silence_chance += 100;
-            result.sleep_chance += 100;
-            result.bind_chance += 100;
-            result.terror_chance += 100;
-            result.collision_chance += 100;
+            result.perception.melee_hit += 60;
+            result.perception.ranged_hit += 60;
+            result.perception.magic_hit += 60;
+            result.perception.weaken_chance += 100;
+            result.perception.stun_chance += 100;
+            result.perception.petrification_chance += 100;
+            result.perception.silence_chance += 100;
+            result.perception.sleep_chance += 100;
+            result.perception.bind_chance += 100;
+            result.perception.terror_chance += 100;
+            result.perception.collision_chance += 100;
         }
         return result;
     });
