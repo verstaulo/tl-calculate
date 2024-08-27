@@ -15,8 +15,7 @@ const attributeStore = useAttributeStore();
     <section class="characterAttributes">
         <div class="characterAttributes__title">
             <span>Available Stat Points: {{ attributeStore.availableAttributesPoints }}</span>
-
-            <button v-show="attributeStore.availableAttributesPoints < 49" @click="attributeStore.resetAttributes">
+            <button v-show="attributeStore.availableAttributesPoints < 54" @click="attributeStore.resetAttributes">
                 <FontAwesomeIcon :icon="faRotate" />
             </button>
         </div>
@@ -55,8 +54,8 @@ const attributeStore = useAttributeStore();
 .characterAttributes {
     user-select: none;
     border-radius: var(--base-border-radius);
-    display: grid;
-    place-content: center;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
     min-width: 20rem;
 }
