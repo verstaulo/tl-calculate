@@ -16,8 +16,7 @@ const equipmentStore = useEquipmentStore();
 const isItemsListOpen = ref(false);
 const menuMode = ref('info');
 const fixedMenuStyles = {
-    'box-shadow': '0 0 1rem var(--legendary)',
-    'border-radius': '30%'
+    'box-shadow': '0 0 1rem var(--legendary)'
 };
 
 const takeoffItemHandler = () => {
