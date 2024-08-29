@@ -1125,7 +1125,7 @@
       "image": "./images/items/weapon/wand/overture_of_soul_salvation.webp",
       "perk": {
         "description": "Clay's Salvation heals friendly players' Health by 50% of Base Damage per sec for 6s",
-        "image": "./images/items/weapon/wand/nocturne_of_the_deep-perk.webp",
+        "image": "./images/items/weapon/wand/overture_of_soul_salvation-perk.webp",
         "title": "Invigorating Salvation"
       },
       "stats": {
@@ -3962,8 +3962,8 @@
       "image": "./images/items/head/world_tree's_mysterious_wreath.webp",
       "setName": "world_tree_set",
       "stats": {
-        "melee_defense": 220,
-        "ranged_defense": 176,
+        "melee_defense": 209,
+        "ranged_defense": 187,
         "wisdom": 3,
         "buff_duration": 3,
         "heavy_attack_chance": 27
@@ -8619,10 +8619,10 @@
       "id": "belt-0004",
       "image": "./images/items/belt/tukuns_cast_iron_belt.png",
       "stats": {
-        "collision_resistance": 33,
         "magic_defense": 180,
+        "melee_endurance": 80,
         "max_health": 225,
-        "melee_endurance": 40
+        "collision_resistance": 33
       },
       "title": "Tukun's Cast Iron Belt",
       "traits": {

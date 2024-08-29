@@ -14,9 +14,9 @@ const props = defineProps({
 });
 defineEmits(['increase', 'decrease']);
 const fine = computed(() => {
-    return props.addedAttributeCount - 10 >= 20 && props.addedAttributeCount - 10 < 30
+    return props.addedAttributeCount >= 20 && props.addedAttributeCount < 30
         ? 2
-        : props.addedAttributeCount - 10 >= 30 && props.addedAttributeCount - 10 < 40
+        : props.addedAttributeCount >= 30
           ? 4
           : 0;
 });

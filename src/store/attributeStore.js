@@ -3,8 +3,8 @@ import { defineStore } from 'pinia';
 import { useEquipmentStore } from './equipmentStore.js';
 import { useMasteryStore } from './masteryStore.js';
 import mergeObjects from '../utils/mergeObjects.js';
-import ATTRIBUTES_DAMAGE_PATTERN from '../constants/ATTRIBUTE_DAMAGE_PATTERN.json';
 import HP_MP_REGEN_PATTERN from '../constants/HP_MP_REGEN_PATTERN.json';
+import ATTRIBUTES_DAMAGE_PATTERN from '../constants/ATTRIBUTE_DAMAGE_PATTERN.json';
 
 export const useAttributeStore = defineStore('attributeStore', () => {
     const availableAttributesPoints = ref(54);
@@ -222,7 +222,7 @@ export const useAttributeStore = defineStore('attributeStore', () => {
 
     function decreaseAttributeCount(attributeName, count = 1) {
         const currentValue = addedAttributeCount.value[attributeName];
-        const neededPointsCount = currentValue >= 31 && currentValue <= 40 ? 2 : currentValue > 40 ? 4 : 1;
+        const neededPointsCount = currentValue >= 21 && currentValue <= 30 ? 2 : currentValue >= 31 ? 4 : 1;
 
         if (currentValue === 0 || availableAttributesPoints.value + neededPointsCount > 54) return;
 
