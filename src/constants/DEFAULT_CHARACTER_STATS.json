@@ -1,7 +1,7 @@
 {
   "amitoi_heal": 200,
   "animalia_damage_bonus": 0,
-  "aoe_bonus_range": 0,
+  "magic_damage_dealt": 0,
   "attack_range": 0,
   "attack_speed": 0,
   "attack_speed_bonus": 0,
@@ -66,7 +66,7 @@
   "petrification_resistance": 0,
   "plantaria_damage_bonus": 0,
   "ranged_critical_hit": 50,
-  "ranged_damage_bonus": 0,
+  "ranged_damage_dealt": 0,
   "ranged_defense": 0,
   "ranged_endurance": 0,
   "ranged_evasion": 20,

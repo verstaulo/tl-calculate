@@ -858,7 +858,7 @@
             "title": "Brutal Wound",
             "img": "./images/mastery_img/crossbow_utility3.png",
             "stats": {
-              "ranged_damage_bonus": 5
+              "ranged_damage_dealt": 5
             }
           }
         ]
@@ -1072,10 +1072,10 @@
             }
           },
           {
-            "title": "Vast Destruction",
+            "title": "Brutal Destruction",
             "img": "./images/mastery_img/staff_utility3.png",
             "stats": {
-              "aoe_bonus_range": 20
+              "magic_damage_dealt": 5
             }
           }
         ]

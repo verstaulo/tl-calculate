@@ -4,7 +4,7 @@ import { useEquipmentStore } from '../../store/equipmentStore.js';
 import ALL_EQUIPMENT from '../../constants/ALL_EQUIPMENT.json';
 import EquipmentListFilters from './EquipmentListFilters.vue';
 import ItemMenu from './ItemMenu.vue';
-import Tooltip1 from '../UI/Tooltip.vue';
+import Tooltip from '../UI/Tooltip.vue';
 
 const { equipmentStateKey } = defineProps({
     equipmentStateKey: String
@@ -48,7 +48,7 @@ const filteredItems = computed(() => {
 });
 
 const selectHandler = (item, equipmentStateKey) => {
-    equipmentStore.putOnEquipment(item, equipmentStateKey);
+    equipmentStore.putOnEquipment({ ...item }, equipmentStateKey);
     emit('selected');
 };
 </script>
@@ -66,7 +66,7 @@ const selectHandler = (item, equipmentStateKey) => {
                 :filters-list="weaponFilters" />
         </div>
         <ul class="itemsList__cards">
-            <Tooltip1 v-for="item in filteredItems">
+            <Tooltip v-for="item in filteredItems">
                 <template #tooltip__trigger>
                     <li>
                         <button
@@ -88,7 +88,7 @@ const selectHandler = (item, equipmentStateKey) => {
                 <template #tooltip__content>
                     <ItemMenu :item="item" mode="info"></ItemMenu>
                 </template>
-            </Tooltip1>
+            </Tooltip>
         </ul>
 
         <div v-if="filteredItems.length === 0">
