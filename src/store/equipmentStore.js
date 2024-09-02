@@ -24,22 +24,71 @@ export const useEquipmentStore = defineStore('equipmentStore', () => {
     });
     const equipmentStats = computed(() =>
         mergeObjects(
-            mergeObjects(equipment.value.main_weapon?.stats, equipment.value.main_weapon?.selectedTraits),
+            mergeObjects(
+                equipment.value.main_weapon?.stats,
+                equipment.value.main_weapon?.selectedTraits,
+                equipment.value.main_weapon?.selectedResonance
+            ),
             mergeObjects(
                 filteredSecondaryStats(equipment.value.secondary_weapon?.stats),
-                equipment.value.secondary_weapon?.selectedTraits
+                equipment.value.secondary_weapon?.selectedTraits,
+                equipment.value.secondary_weapon?.selectedResonance
             ),
-            mergeObjects(equipment.value.head?.stats, equipment.value.head?.selectedTraits),
-            mergeObjects(equipment.value.legs?.stats, equipment.value.legs?.selectedTraits),
-            mergeObjects(equipment.value.body?.stats, equipment.value.body?.selectedTraits),
-            mergeObjects(equipment.value.boots?.stats, equipment.value.boots?.selectedTraits),
-            mergeObjects(equipment.value.gloves?.stats, equipment.value.gloves?.selectedTraits),
-            mergeObjects(equipment.value.cloak?.stats, equipment.value.cloak?.selectedTraits),
-            mergeObjects(equipment.value.necklace?.stats, equipment.value.necklace?.selectedTraits),
-            mergeObjects(equipment.value.belt?.stats, equipment.value.belt?.selectedTraits),
-            mergeObjects(equipment.value.bracelet?.stats, equipment.value.bracelet?.selectedTraits),
-            mergeObjects(equipment.value.ring_first?.stats, equipment.value.ring_first?.selectedTraits),
-            mergeObjects(equipment.value.ring_second?.stats, equipment.value.ring_second?.selectedTraits),
+            mergeObjects(
+                equipment.value.head?.stats,
+                equipment.value.head?.selectedTraits,
+                equipment.value.head?.selectedResonance
+            ),
+            mergeObjects(
+                equipment.value.legs?.stats,
+                equipment.value.legs?.selectedTraits,
+                equipment.value.legs?.selectedResonance
+            ),
+            mergeObjects(
+                equipment.value.body?.stats,
+                equipment.value.body?.selectedTraits,
+                equipment.value.body?.selectedResonance
+            ),
+            mergeObjects(
+                equipment.value.boots?.stats,
+                equipment.value.boots?.selectedTraits,
+                equipment.value.boots?.selectedResonance
+            ),
+            mergeObjects(
+                equipment.value.gloves?.stats,
+                equipment.value.gloves?.selectedTraits,
+                equipment.value.gloves?.selectedResonance
+            ),
+            mergeObjects(
+                equipment.value.cloak?.stats,
+                equipment.value.cloak?.selectedTraits,
+                equipment.value.cloak?.selectedResonance
+            ),
+            mergeObjects(
+                equipment.value.necklace?.stats,
+                equipment.value.necklace?.selectedTraits,
+                equipment.value.necklace?.selectedResonance
+            ),
+            mergeObjects(
+                equipment.value.belt?.stats,
+                equipment.value.belt?.selectedTraits,
+                equipment.value.belt?.selectedResonance
+            ),
+            mergeObjects(
+                equipment.value.bracelet?.stats,
+                equipment.value.bracelet?.selectedTraits,
+                equipment.value.bracelet?.selectedResonance
+            ),
+            mergeObjects(
+                equipment.value.ring_first?.stats,
+                equipment.value.ring_first?.selectedTraits,
+                equipment.value.ring_first?.selectedResonance
+            ),
+            mergeObjects(
+                equipment.value.ring_second?.stats,
+                equipment.value.ring_second?.selectedTraits,
+                equipment.value.ring_second?.selectedResonance
+            ),
             equipmentValidSetStats.value
         )
     );
@@ -76,6 +125,7 @@ export const useEquipmentStore = defineStore('equipmentStore', () => {
         return result;
     });
     const equipmentValidSetStats = ref(null);
+    const equipmentResonanceStats = ref(null);
     watch(
         () => equipmentSetStats.value,
         (newValue, oldValue) => {

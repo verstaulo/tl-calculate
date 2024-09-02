@@ -121,6 +121,7 @@
       "itemGroup": "weapon",
       "level": 0,
       "tier": "epic",
+      "source": "arch_boss",
       "id": "w-s-0005",
       "image": "./images/items/weapon/staff/queen_bellandirs_domination_wand.png",
       "perk": {
@@ -597,6 +598,7 @@
       "itemGroup": "weapon",
       "level": 0,
       "tier": "epic",
+      "source": "arch_boss",
       "id": "w-d-0007",
       "image": "./images/items/weapon/dagger/tevents_massacre_blade.png",
       "perk": {
@@ -952,6 +954,7 @@
       "itemGroup": "weapon",
       "level": 0,
       "tier": "epic",
+      "source": "arch_boss",
       "id": "w-w-0004",
       "image": "./images/items/weapon/wand/tevents_cuneiform_bone.png",
       "perk": {
@@ -1334,6 +1337,7 @@
       "itemGroup": "weapon",
       "level": 0,
       "tier": "epic",
+      "source": "arch_boss",
       "id": "w-c-0003",
       "image": "./images/items/weapon/crossbow/queen_bellandirs_annihilation_crossbow.png",
       "perk": {
@@ -1778,6 +1782,7 @@
       "itemGroup": "weapon",
       "level": 0,
       "tier": "epic",
+      "source": "arch_boss",
       "id": "w-l-0003",
       "image": "./images/items/weapon/longbow/tevents_screaming_bow.png",
       "perk": {
@@ -2220,6 +2225,7 @@
       "itemGroup": "weapon",
       "level": 0,
       "tier": "epic",
+      "source": "arch_boss",
       "id": "w-shield-0004",
       "image": "./images/items/weapon/shield/queen_bellandirs_blade.png",
       "perk": {
@@ -2678,6 +2684,7 @@
       "itemGroup": "weapon",
       "level": 0,
       "tier": "epic",
+      "source": "arch_boss",
       "id": "w-greatsword-0005",
       "image": "./images/items/weapon/greatsword/tevents_despair_blade.png",
       "perk": {

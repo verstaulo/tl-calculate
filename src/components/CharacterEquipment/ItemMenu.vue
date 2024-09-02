@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons/faPlusCircle';
 import { faMinusCircle } from '@fortawesome/free-solid-svg-icons/faMinusCircle';
 import { faCheck } from '@fortawesome/free-solid-svg-icons/faCheck';
+import ItemMenuResonance from './ItemMenuResonance.vue';
 
 const props = defineProps({
     mode: String,
@@ -32,7 +33,10 @@ const menuWidth = computed(() => (!currentItem.value ? 'max-content' : '350px'))
 const enchantedLevel = ref(currentItem.value?.level || 0);
 const enchantedStats = ref([]);
 const selectedTraits = ref([]);
-
+const selectedResonance = ref(null);
+const selectResonanceHandler = (stats) => {
+    selectedResonance.value = stats;
+};
 const _clickHandler = (event) => {
     if (menuRef.value && !menuRef.value.contains(event.target)) {
         emit('closeMenu');
@@ -105,6 +109,10 @@ const submitEnchantedStatsHandler = () => {
         equipmentStore.equipment[props.equipmentItemStateKey].selectedTraits = Object.fromEntries(selectedTraits.value);
         selectedTraits.value = [];
     }
+    if (selectedResonance.value) {
+        equipmentStore.equipment[props.equipmentItemStateKey].selectedResonance = selectedResonance.value;
+        selectedResonance.value = null;
+    }
     enchantedStats.value = [];
     enchantedLevel.value = currentItem.value.level;
 };
@@ -156,7 +164,9 @@ onUnmounted(() => {
                     </div>
 
                     <button
-                        :disabled="enchantedLevel === currentItem.level && selectedTraits.length === 0"
+                        :disabled="
+                            enchantedLevel === currentItem.level && selectedTraits.length === 0 && !selectedResonance
+                        "
                         class="itemMenu__buttonConfirm"
                         @click="submitEnchantedStatsHandler">
                         <FontAwesomeIcon :icon="faCheck" />
@@ -181,11 +191,14 @@ onUnmounted(() => {
                 :item-selected-traits="currentItem.selectedTraits ? Object.entries(currentItem.selectedTraits) : null"
                 :item-available-traits="Object.entries(currentItem.traits)"
                 :mode="mode"
-                @trait-selected="
-                    (args) => {
-                        selectedTraits = args;
-                    }
-                " />
+                @trait-selected="(args) => (selectedTraits = args)" />
+            <ItemMenuResonance
+                :mode="mode"
+                :item-type="currentItem.type"
+                :item-source="currentItem.source"
+                :item-tier="currentItem.tier"
+                :selected-resonance-effect="selectedResonance || currentItem.selectedResonance"
+                @resonance-selected="selectResonanceHandler" />
             <ItemMenuSetBonuses v-if="currentItem.setName" :item-set-name="currentItem.setName" />
         </template>
     </div>
