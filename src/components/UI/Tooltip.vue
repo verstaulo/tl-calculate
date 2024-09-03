@@ -66,6 +66,8 @@ const updateTooltipPosition = (event) => {
             tooltipStyle.value.top = `${y + 10}px`;
         } else if (hasTopSpace) {
             tooltipStyle.value.top = `${y - tooltipHeight - 10}px`;
+        } else {
+            tooltipStyle.value.top = `${10}px`;
         }
     }
 };

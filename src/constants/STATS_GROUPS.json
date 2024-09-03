@@ -24,13 +24,13 @@
       "melee_critical_hit",
       "ranged_critical_hit",
       "magic_critical_hit",
-      "skill_damage_boost",
-      "damage_bonus",
-      "buff_duration",
       "melee_heavy_attack_chance",
       "ranged_heavy_attack_chance",
       "magic_heavy_attack_chance",
+      "skill_damage_boost",
+      "damage_bonus",
       "critical_damage_bonus",
+      "buff_duration",
       "shield_block_penetration_chance",
       "skill_damage_over_time"
     ],
@@ -41,13 +41,13 @@
       "melee_endurance",
       "ranged_endurance",
       "magic_endurance",
-      "skill_damage_resistance",
-      "damage_reduction",
-      "debuff_duration",
       "melee_heavy_attack_evasion",
       "ranged_heavy_attack_evasion",
       "magic_heavy_attack_evasion",
-      "critical_damage_reduction"
+      "skill_damage_resistance",
+      "damage_reduction",
+      "critical_damage_reduction",
+      "debuff_duration"
     ],
     "survival": [
       "max_health",
@@ -63,6 +63,7 @@
       "skill_heal_bonus",
       "incoming_heal",
       "amitoi_heal",
+      "incoming_recovery_effect",
       "recovery_crystal_heal"
     ],
     "resist": [

@@ -32,7 +32,10 @@ const menuWidth = computed(() => (!currentItem.value ? 'max-content' : '350px'))
 
 const enchantedLevel = ref(currentItem.value?.level || 0);
 const enchantedStats = ref([]);
-const selectedTraits = ref([]);
+const selectedTraits = ref(null);
+const selectTraitHandler = (stats) => {
+    selectedTraits.value = stats;
+};
 const selectedResonance = ref(null);
 const selectResonanceHandler = (stats) => {
     selectedResonance.value = stats;
@@ -105,9 +108,9 @@ const submitEnchantedStatsHandler = () => {
         equipmentStore.equipment[props.equipmentItemStateKey].stats = Object.fromEntries(enchantedStats.value);
         equipmentStore.equipment[props.equipmentItemStateKey].level = enchantedLevel.value;
     }
-    if (selectedTraits.value.length > 0) {
-        equipmentStore.equipment[props.equipmentItemStateKey].selectedTraits = Object.fromEntries(selectedTraits.value);
-        selectedTraits.value = [];
+    if (selectedTraits.value) {
+        equipmentStore.equipment[props.equipmentItemStateKey].selectedTraits = selectedTraits.value;
+        selectedTraits.value = null;
     }
     if (selectedResonance.value) {
         equipmentStore.equipment[props.equipmentItemStateKey].selectedResonance = selectedResonance.value;
@@ -164,9 +167,7 @@ onUnmounted(() => {
                     </div>
 
                     <button
-                        :disabled="
-                            enchantedLevel === currentItem.level && selectedTraits.length === 0 && !selectedResonance
-                        "
+                        :disabled="enchantedLevel === currentItem.level && !selectedTraits && !selectedResonance"
                         class="itemMenu__buttonConfirm"
                         @click="submitEnchantedStatsHandler">
                         <FontAwesomeIcon :icon="faCheck" />
@@ -188,10 +189,10 @@ onUnmounted(() => {
                 :image="currentItem.perk.image"
                 :title="currentItem.perk.title" />
             <ItemMenuTraits
-                :item-selected-traits="currentItem.selectedTraits ? Object.entries(currentItem.selectedTraits) : null"
-                :item-available-traits="Object.entries(currentItem.traits)"
+                :item-selected-traits="selectedTraits || currentItem.selectedTraits || null"
                 :mode="mode"
-                @trait-selected="(args) => (selectedTraits = args)" />
+                :item-available-traits="currentItem.traits"
+                @trait-selected="selectTraitHandler" />
             <ItemMenuResonance
                 :mode="mode"
                 :item-type="currentItem.type"

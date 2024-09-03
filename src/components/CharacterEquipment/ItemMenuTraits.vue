@@ -1,19 +1,31 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, ref, watchEffect } from 'vue';
 import storeKeyToTitle from '../../utils/storeKeyToTitle.js';
-import ItemMenuTraitSelect from './ItemMenuTraitSelect.vue';
+import Select from '../UI/Select.vue';
 
 const props = defineProps({
     mode: String,
-    itemSelectedTraits: Array,
-    itemAvailableTraits: Array
+    itemSelectedTraits: Object,
+    itemAvailableTraits: Object
 });
 defineEmits(['traitSelected']);
+
+const title = computed(() => {
+    return !props.itemSelectedTraits && props.mode === 'info'
+        ? 'Available Traits:'
+        : props.itemSelectedTraits && props.mode === 'info'
+          ? 'Selected Traits:'
+          : 'Traits:';
+});
+
 const currentSelectedTraits = ref([]);
-
-const traitsToSubmit = computed(() => {
-    const result = props.itemSelectedTraits ? [...props.itemSelectedTraits] : [];
-
+watchEffect(() => {
+    if (props.itemSelectedTraits) {
+        currentSelectedTraits.value = Object.entries(props.itemSelectedTraits);
+    }
+});
+const updatedTraits = computed(() => {
+    const result = [];
     if (currentSelectedTraits.value[0]) {
         result[0] = currentSelectedTraits.value[0];
     }
@@ -23,100 +35,94 @@ const traitsToSubmit = computed(() => {
     if (currentSelectedTraits.value[2]) {
         result[2] = currentSelectedTraits.value[2];
     }
-    return result;
+    return Object.fromEntries(result);
 });
 
-const currentAvailableTraits = computed(() => {
-    if (currentSelectedTraits.value.length === 0 && !props.itemSelectedTraits) {
-        return props.itemAvailableTraits;
-    } else {
-        const selectedTraitsKeys =
-            traitsToSubmit.value.length === 0
-                ? props.itemSelectedTraits.map(([keyName]) => keyName)
-                : traitsToSubmit.value.map(([keyName]) => keyName);
-        return props.itemAvailableTraits.filter(([key]) => !selectedTraitsKeys.includes(key));
-    }
+const availableTraits = computed(() => {
+    const defaultTraitsList = Object.entries(props.itemAvailableTraits);
+    return defaultTraitsList.reduce((acc, [key, value]) => {
+        if (!props.itemSelectedTraits) {
+            acc.push({ title: storeKeyToTitle(key) + ': ' + value * 4, value: [key, value * 4] });
+        } else if (props.itemSelectedTraits && !props.itemSelectedTraits.hasOwnProperty(key)) {
+            acc.push({ title: storeKeyToTitle(key) + ': ' + value * 4, value: [key, value * 4] });
+        }
+        return acc;
+    }, []);
 });
+const statArrayToTitle = (stats) => {
+    if (!stats) return null;
+    return storeKeyToTitle(stats[0]) + ': ' + stats[1];
+};
 </script>
 <template>
     <div class="itemMenuTraits">
-        <template v-if="!itemSelectedTraits && mode === 'info'">
-            <div class="traits">
-                <p>Available Traits:</p>
-                <ul>
-                    <li v-for="[key, value] in itemAvailableTraits" :key="key">
-                        <span>{{ storeKeyToTitle(key) }}: </span>
-                        <span>{{ value }} ~ {{ value * 4 }}</span>
-                    </li>
-                </ul>
-            </div>
-        </template>
-
-        <template v-if="itemSelectedTraits && itemSelectedTraits.length > 0 && mode === 'info'">
-            <div class="traits">
-                <p>Selected Traits:</p>
-                <ul>
-                    <template v-for="index in 3">
-                        <li v-if="itemSelectedTraits[index - 1]" :key="index" class="hasTraits">
-                            <span>{{ storeKeyToTitle(itemSelectedTraits[index - 1][0]) }}: </span>
-                            <span>{{ itemSelectedTraits[index - 1][1] }}</span>
+        <p class="itemMenuTraits__title">{{ title }}</p>
+        <div class="itemMenuTraits__body">
+            <template v-if="!itemSelectedTraits && mode === 'info'">
+                <div class="traits">
+                    <ul>
+                        <li v-for="(value, key) in itemAvailableTraits" :key="key">
+                            <span>{{ storeKeyToTitle(key) }}: </span>
+                            <span>{{ value }} ~ {{ value * 4 }}</span>
                         </li>
-                        <li v-else>Empty Trait Slot...</li>
-                    </template>
-                </ul>
-            </div>
-        </template>
-        <template v-if="mode === 'edit'">
-            <ItemMenuTraitSelect
-                :availableTraits="currentAvailableTraits"
-                :title="
-                    currentSelectedTraits[0]
-                        ? currentSelectedTraits[0][0] + ': ' + currentSelectedTraits[0][1]
-                        : itemSelectedTraits
-                          ? itemSelectedTraits[0][0] + ': ' + itemSelectedTraits[0][1]
-                          : 'Select Trait'
-                "
-                @traitSelected="
-                    (args) => {
-                        currentSelectedTraits[0] = args;
-                        $emit('traitSelected', traitsToSubmit);
-                    }
-                " />
-            <ItemMenuTraitSelect
-                :availableTraits="currentAvailableTraits"
-                :title="
-                    currentSelectedTraits[1]
-                        ? currentSelectedTraits[1][0] + ': ' + currentSelectedTraits[1][1]
-                        : itemSelectedTraits && itemSelectedTraits[1]
-                          ? itemSelectedTraits[1][0] + ': ' + itemSelectedTraits[1][1]
-                          : 'Select Trait'
-                "
-                @traitSelected="
-                    (args) => {
-                        currentSelectedTraits[1] = args;
-                        $emit('traitSelected', traitsToSubmit);
-                    }
-                " />
-            <ItemMenuTraitSelect
-                :availableTraits="currentAvailableTraits"
-                :title="
-                    currentSelectedTraits[2]
-                        ? currentSelectedTraits[2][0] + ': ' + currentSelectedTraits[2][1]
-                        : itemSelectedTraits && itemSelectedTraits[2]
-                          ? itemSelectedTraits[2][0] + ': ' + itemSelectedTraits[2][1]
-                          : 'Select Trait'
-                "
-                @traitSelected="
-                    (args) => {
-                        currentSelectedTraits[2] = args;
-                        $emit('traitSelected', traitsToSubmit);
-                    }
-                " />
-        </template>
+                    </ul>
+                </div>
+            </template>
+            <template v-if="itemSelectedTraits && mode === 'info'">
+                <div class="traits">
+                    <ul>
+                        <template v-for="index in 3">
+                            <li v-if="currentSelectedTraits[index - 1]" :key="index" class="active">
+                                <span>{{ storeKeyToTitle(currentSelectedTraits[index - 1][0]) }}: </span>
+                                <span>{{ currentSelectedTraits[index - 1][1] }}</span>
+                            </li>
+                            <li v-else>Empty Trait slot...</li>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+            <template v-if="mode === 'edit'">
+                <Select
+                    :options="availableTraits"
+                    :placeholder="statArrayToTitle(currentSelectedTraits[0]) || 'Select trait'"
+                    :class="{ active: currentSelectedTraits[0] }"
+                    @select="
+                        (stats) => {
+                            currentSelectedTraits[0] = stats;
+                            $emit('traitSelected', updatedTraits);
+                        }
+                    " />
+                <Select
+                    :options="availableTraits"
+                    :placeholder="statArrayToTitle(currentSelectedTraits[1]) || 'Select trait'"
+                    :class="{ active: currentSelectedTraits[1] }"
+                    @select="
+                        (stats) => {
+                            currentSelectedTraits[1] = stats;
+                            $emit('traitSelected', updatedTraits);
+                        }
+                    " />
+                <Select
+                    :options="availableTraits"
+                    :placeholder="statArrayToTitle(currentSelectedTraits[2]) || 'Select trait'"
+                    :class="{ active: currentSelectedTraits[2] }"
+                    @select="
+                        (stats) => {
+                            currentSelectedTraits[2] = stats;
+                            $emit('traitSelected', updatedTraits);
+                        }
+                    " />
+            </template>
+        </div>
     </div>
 </template>
 <style scoped>
-.itemMenuTraits {
+.itemMenuTraits__title {
+    padding: 0.25rem;
+    text-align: center;
+}
+
+.itemMenuTraits__body {
     border-radius: 0.2rem;
     background-color: hsla(var(--neutral77), 0.5);
 }
@@ -125,7 +131,10 @@ const currentAvailableTraits = computed(() => {
     padding: 0.5rem;
 }
 
-.hasTraits {
+.active {
+    color: var(--secondary-muted);
+}
+.active:deep(.select__button) {
     color: var(--secondary-muted);
 }
 </style>

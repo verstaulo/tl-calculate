@@ -74,6 +74,7 @@
   "ranged_heavy_attack_evasion": 0,
   "ranged_hit": 50,
   "recovery_crystal_heal": 0,
+  "incoming_recovery_effect": 0,
   "secondary_max_damage": 0,
   "secondary_min_damage": 0,
   "shield_block_chance": 0,

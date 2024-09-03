@@ -32,11 +32,14 @@ const openItemsListHandler = (event) => {
         menuMode.value = 'edit';
     }
 };
+const setMenuMode = () => {
+    menuMode.value = 'info';
+};
 </script>
 
 <template>
     <div class="equipmentItem">
-        <Tooltip withFixedMode :fixedModeStyles="fixedMenuStyles">
+        <Tooltip withFixedMode :fixedModeStyles="fixedMenuStyles" :on-close="setMenuMode">
             <template #tooltip__trigger>
                 <button
                     :class="{

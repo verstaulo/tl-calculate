@@ -434,12 +434,12 @@
       },
       "title": "Lequirus's Thorny Edge",
       "traits": {
-        "critical_hit": 20,
-        "einarden_damage_bonus": 4,
-        "heavy_attack_chance": 20,
         "hit": 20,
+        "critical_hit": 20,
+        "heavy_attack_chance": 20,
         "mana_regen": 15,
-        "max_mana": 150
+        "max_mana": 150,
+        "einarden_damage_bonus": 4
       }
     },
     {

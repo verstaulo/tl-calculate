@@ -72,7 +72,7 @@ const filteredResonanceEffects = computed(() => {
                     <li
                         v-for="(effectValue, effectKey) of selectedResonanceEffect"
                         :key="effectKey"
-                        class="resonance__listItem">
+                        class="resonance__listItem active">
                         <span> {{ storeKeyToTitle(effectKey) }}: </span>
                         <span>
                             {{ effectValue }}
@@ -114,6 +114,10 @@ const filteredResonanceEffects = computed(() => {
 }
 
 .resonance__body.active:deep(.select__button) {
+    color: var(--secondary-muted);
+}
+
+.active {
     color: var(--secondary-muted);
 }
 </style>
