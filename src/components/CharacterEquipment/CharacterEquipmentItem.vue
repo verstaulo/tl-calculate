@@ -67,13 +67,10 @@ const setMenuMode = () => {
                         draggable="false"
                         class="equipmentItem__image"
                         :class="{ 'equipmentItem__image-default': !equipmentStore.equipment[equipmentItemStateKey] }" />
-
-                    <span
-                        v-if="equipmentStore.equipment[equipmentItemStateKey]?.level > 0"
-                        class="equipmentItem__level">
-                        {{ equipmentStore.equipment[equipmentItemStateKey]?.level }}
-                    </span>
                 </button>
+                <div v-if="equipmentStore.equipment[equipmentItemStateKey]?.level > 0" class="equipmentItem__level">
+                    {{ equipmentStore.equipment[equipmentItemStateKey]?.level }}
+                </div>
             </template>
             <template #tooltip__content>
                 <ItemMenu :equipment-item-state-key="equipmentItemStateKey" :mode="menuMode" />
@@ -112,24 +109,35 @@ const setMenuMode = () => {
 
 .equipmentItem__level {
     position: absolute;
-    z-index: 50;
     bottom: 0;
     left: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2px;
-    background-color: var(--epicBase);
-    border: 1px solid var(--neutral4);
-    border-radius: 100%;
-    width: 20px;
-    height: 20px;
-    font-size: 15px;
+    background-color: var(--neutral5);
+    font-size: 12px;
     font-weight: bold;
+    width: 1.5rem;
+    height: 1.5rem;
+    clip-path: polygon(8% 25%, 8% 75%, 50% 100%, 92% 75%, 92% 25%, 50% 0%);
+}
+
+.equipmentItem__level:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: var(--epicBase);
+    clip-path: polygon(8% 25%, 8% 75%, 50% 100%, 92% 75%, 92% 25%, 50% 0%);
 }
 
 .shadow {
-    filter: drop-shadow(0 0 10px var(--epic));
+    filter: drop-shadow(0 0 8px var(--epic));
 }
 
 .equipmentItem__image {
