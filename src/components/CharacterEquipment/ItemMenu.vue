@@ -46,7 +46,11 @@ const _clickHandler = (event) => {
     }
 };
 const increaseStatsHandler = () => {
-    if (enchantedLevel.value >= 9) return;
+    if (
+        (enchantedLevel.value === 9 && currentItem.value.tier === 'epic' && !currentItem.value.source) ||
+        enchantedLevel.value === 12
+    )
+        return;
     enchantedLevel.value++;
     const result = {};
     if (enchantedStats.value.length === 0) {
@@ -150,16 +154,18 @@ onUnmounted(() => {
                 <div class="itemMenu__controls">
                     <div class="itemMenu__controls-level">
                         <button
-                            class="itemMenu__buttonMinus"
-                            :class="{ 'itemMenu__buttonMinus-active': currentItem.level > 0 || enchantedLevel > 0 }"
+                            class="itemMenu__button"
+                            :class="{ 'itemMenu__button-minus': currentItem.level > 0 || enchantedLevel > 0 }"
                             @click="decreaseStatsHandler">
                             <FontAwesomeIcon :icon="faMinusCircle" />
                         </button>
                         <span class="itemMenu__level">{{ enchantedLevel }}</span>
                         <button
-                            class="itemMenu__buttonPlus"
+                            class="itemMenu__button"
                             :class="{
-                                'itemMenu__buttonPlus-active': enchantedLevel < 9
+                                'itemMenu__button-plus':
+                                    (enchantedLevel < 9 && currentItem.tier === 'epic' && !currentItem.source) ||
+                                    (enchantedLevel < 12 && (currentItem.tier === 'epic2' || currentItem.source))
                             }"
                             @click="increaseStatsHandler">
                             <FontAwesomeIcon :icon="faPlusCircle" />
@@ -240,7 +246,7 @@ onUnmounted(() => {
     display: flex;
 }
 
-.itemMenu__buttonPlus {
+.itemMenu__button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -252,23 +258,11 @@ onUnmounted(() => {
     color: var(--neutral6);
 }
 
-.itemMenu__buttonMinus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 22px;
-    height: 22px;
-    padding: 2px;
-    border-radius: 100%;
-    background-color: var(--neutral7);
-    color: var(--neutral6);
-}
-
-.itemMenu__buttonMinus-active {
+.itemMenu__button-minus {
     background-color: var(--primary-muted);
 }
 
-.itemMenu__buttonPlus-active {
+.itemMenu__button-plus {
     background-color: var(--secondary-muted);
 }
 
