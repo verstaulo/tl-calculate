@@ -131,9 +131,6 @@ const statArrayToTitle = (stats) => {
     padding: 0.5rem;
 }
 
-.active {
-    color: var(--secondary-muted);
-}
 .active:deep(.select__button) {
     color: var(--secondary-muted);
 }

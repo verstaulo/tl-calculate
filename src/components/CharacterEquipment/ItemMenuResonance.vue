@@ -116,8 +116,4 @@ const filteredResonanceEffects = computed(() => {
 .resonance__body.active:deep(.select__button) {
     color: var(--secondary-muted);
 }
-
-.active {
-    color: var(--secondary-muted);
-}
 </style>
