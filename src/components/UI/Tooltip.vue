@@ -98,7 +98,9 @@ const updateTooltipPosition = (event) => {
 <style scoped>
 .tooltip-container {
     position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tooltip__content {
