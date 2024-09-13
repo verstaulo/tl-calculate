@@ -2,7 +2,7 @@
 import CounterProgress from './CounterProgress.vue';
 import AttributeInfo from './AttributeInfo.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faCircleQuestion, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { computed } from 'vue';
 import Tooltip from '../UI/Tooltip.vue';
 
@@ -20,29 +20,38 @@ const fine = computed(() => {
           ? 4
           : 0;
 });
+
+const background = computed(() => {
+    return {
+        backgroundImage: `url(${props.attributeImage})`,
+        backgroundSize: '65%',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center'
+    };
+});
 </script>
 <template>
     <div class="attributeCounter">
-        <img :src="props.attributeImage" alt="attributeName" class="attributeCounter__image" draggable="false" />
-        <p class="attributeCounter__title">{{ $props.attributeName }}</p>
+        <div :style="attributeImage ? background : ''">
+            <tooltip>
+                <template #tooltip__trigger>
+                    <CounterProgress :attributeCount="attributeCount" />
+                </template>
+                <template #tooltip__content>
+                    <AttributeInfo :attribute-name="attributeName" />
+                </template>
+            </tooltip>
+        </div>
         <div class="attributeCounter__controls">
             <button class="attributeCounter__button" @click="$emit('decrease')">
                 <FontAwesomeIcon :icon="faMinus" />
             </button>
-            <CounterProgress :attributeCount="props.attributeCount" />
+            <p class="attributeCounter__title">{{ attributeName }}</p>
             <button class="attributeCounter__button attributeCounter__button-plus" @click="$emit('increase')">
                 <FontAwesomeIcon :icon="faPlus" />
                 <span class="attributeCounter__fine" v-if="fine > 0">- {{ fine }}</span>
             </button>
         </div>
-        <tooltip>
-            <template #tooltip__trigger>
-                <FontAwesomeIcon :icon="faCircleQuestion" class="fa-info" />
-            </template>
-            <template #tooltip__content>
-                <AttributeInfo :attribute-name="attributeName" />
-            </template>
-        </tooltip>
     </div>
 </template>
 
@@ -50,24 +59,20 @@ const fine = computed(() => {
 .attributeCounter {
     padding: var(--base-padding);
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: var(--baseBackgroundColor);
     position: relative;
     min-width: 2.19rem;
 }
 
-.attributeCounter__image {
-    height: 100%;
-    filter: brightness(300%) drop-shadow(0 0 10px var(--legendary));
-}
-
 .attributeCounter__title {
-    flex-grow: 1;
     text-transform: capitalize;
 }
 
 .attributeCounter__controls {
     display: flex;
+    gap: 0.5rem;
 }
 
 .attributeCounter__button {

@@ -14,7 +14,10 @@ const attributeStore = useAttributeStore();
 <template>
     <section class="characterAttributes">
         <div class="characterAttributes__title">
-            <span>Available Stat Points: {{ attributeStore.availableAttributesPoints }}</span>
+            <span>Available Stat Points: </span>
+            <p>
+                {{ attributeStore.availableAttributesPoints }}
+            </p>
             <button v-show="attributeStore.availableAttributesPoints < 54" @click="attributeStore.resetAttributes">
                 <FontAwesomeIcon :icon="faRotate" />
             </button>
@@ -57,7 +60,7 @@ const attributeStore = useAttributeStore();
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    min-width: 20rem;
+    min-width: 15rem;
 }
 
 .characterAttributes__title {
