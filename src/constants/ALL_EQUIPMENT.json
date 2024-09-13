@@ -269,7 +269,7 @@
       "id": "w-s-0010",
       "image": "./images/items/weapon/staff/daigon's_fire_sword.webp",
       "perk": {
-        "description": "Staff Fire Skill's Damage 5% ▲",
+        "description": "Staff Fire Skill's Damage 5% ▲. Burning damage 15% ▲",
         "image": "./images/items/weapon/staff/daigon's_fire_sword-perk.webp",
         "title": "Daigon's Unleash"
       },
