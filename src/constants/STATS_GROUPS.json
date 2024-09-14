@@ -1,90 +1,296 @@
 {
-  "mainGroup": {
-    "weapons": [
-      "main_max_damage",
-      "main_min_damage",
-      "off_hand_max_damage",
-      "off_hand_min_damage",
-      "attack_speed",
-      "attack_range",
-      "shield_block_chance",
-      "off_hand_weapon_attack_chance"
-    ],
-    "defense": [
-      "melee_defense",
-      "ranged_defense",
-      "magic_defense"
-    ]
-  },
-  "secondaryGroup": {
-    "attack": [
-      "melee_hit",
-      "ranged_hit",
-      "magic_hit",
-      "melee_critical_hit",
-      "ranged_critical_hit",
-      "magic_critical_hit",
-      "melee_heavy_attack_chance",
-      "ranged_heavy_attack_chance",
-      "magic_heavy_attack_chance",
-      "skill_damage_boost",
-      "damage_bonus",
-      "critical_damage_bonus",
-      "buff_duration",
-      "shield_block_penetration_chance",
-      "skill_damage_over_time"
-    ],
-    "protection": [
-      "melee_evasion",
-      "ranged_evasion",
-      "magic_evasion",
-      "melee_endurance",
-      "ranged_endurance",
-      "magic_endurance",
-      "melee_heavy_attack_evasion",
-      "ranged_heavy_attack_evasion",
-      "magic_heavy_attack_evasion",
-      "skill_damage_resistance",
-      "damage_reduction",
-      "critical_damage_reduction",
-      "debuff_duration"
-    ],
-    "survival": [
-      "max_health",
-      "health_regen",
-      "max_mana",
-      "mana_regen",
-      "max_stamina",
-      "stamina_regen",
-      "mana_cost_efficiency",
-      "cooldown_speed",
-      "move_speed",
-      "attack_speed_bonus",
-      "skill_heal_bonus",
-      "incoming_heal",
-      "amitoi_heal",
-      "incoming_recovery_effect",
-      "recovery_crystal_heal"
-    ],
-    "resist": [
-      "weaken_resistance",
-      "stun_resistance",
-      "petrification_resistance",
-      "sleep_resistance",
-      "silence_resistance",
-      "terror_resistance",
-      "bind_resistance",
-      "collision_resistance"
-    ],
-    "chance": [
-      "weaken_chance",
-      "stun_chance",
-      "petrification_chance",
-      "sleep_chance",
-      "silence_chance",
-      "terror_chance",
-      "bind_chance",
-      "collision_chance"
-    ]
-  }
+  "weapons": [
+    {
+      "key": "main_max_damage",
+      "description": ""
+    },
+    {
+      "key": "main_min_damage",
+      "description": ""
+    },
+    {
+      "key": "off_hand_max_damage",
+      "description": ""
+    },
+    {
+      "key": "off_hand_min_damage",
+      "description": ""
+    },
+    {
+      "key": "attack_speed",
+      "description": ""
+    },
+    {
+      "key": "attack_range",
+      "description": ""
+    },
+    {
+      "key": "shield_block_chance",
+      "description": ""
+    },
+    {
+      "key": "off_hand_weapon_attack_chance",
+      "description": ""
+    }
+  ],
+  "defense": [
+    {
+      "key": "melee_defense",
+      "description": ""
+    },
+    {
+      "key": "ranged_defense",
+      "description": ""
+    },
+    {
+      "key": "magic_defense",
+      "description": ""
+    }
+  ],
+  "attack": [
+    {
+      "key": "melee_hit",
+      "description": ""
+    },
+    {
+      "key": "ranged_hit",
+      "description": ""
+    },
+    {
+      "key": "magic_hit",
+      "description": ""
+    },
+    {
+      "key": "melee_critical_hit",
+      "description": ""
+    },
+    {
+      "key": "ranged_critical_hit",
+      "description": ""
+    },
+    {
+      "key": "magic_critical_hit",
+      "description": ""
+    },
+    {
+      "key": "melee_heavy_attack_chance",
+      "description": ""
+    },
+    {
+      "key": "ranged_heavy_attack_chance",
+      "description": ""
+    },
+    {
+      "key": "magic_heavy_attack_chance",
+      "description": ""
+    },
+    {
+      "key": "skill_damage_boost",
+      "description": ""
+    },
+    {
+      "key": "damage_bonus",
+      "description": ""
+    },
+    {
+      "key": "critical_damage_bonus",
+      "description": ""
+    },
+    {
+      "key": "buff_duration",
+      "description": ""
+    },
+    {
+      "key": "shield_block_penetration_chance",
+      "description": ""
+    },
+    {
+      "key": "skill_damage_over_time",
+      "description": ""
+    }
+  ],
+  "protection": [
+    {
+      "key": "melee_evasion",
+      "description": ""
+    },
+    {
+      "key": "ranged_evasion",
+      "description": ""
+    },
+    {
+      "key": "magic_evasion",
+      "description": ""
+    },
+    {
+      "key": "melee_endurance",
+      "description": ""
+    },
+    {
+      "key": "ranged_endurance",
+      "description": ""
+    },
+    {
+      "key": "magic_endurance",
+      "description": ""
+    },
+    {
+      "key": "melee_heavy_attack_evasion",
+      "description": ""
+    },
+    {
+      "key": "ranged_heavy_attack_evasion",
+      "description": ""
+    },
+    {
+      "key": "magic_heavy_attack_evasion",
+      "description": ""
+    },
+    {
+      "key": "skill_damage_resistance",
+      "description": ""
+    },
+    {
+      "key": "damage_reduction",
+      "description": ""
+    },
+    {
+      "key": "critical_damage_reduction",
+      "description": ""
+    },
+    {
+      "key": "debuff_duration",
+      "description": ""
+    }
+  ],
+  "survival": [
+    {
+      "key": "max_health",
+      "description": ""
+    },
+    {
+      "key": "health_regen",
+      "description": ""
+    },
+    {
+      "key": "max_mana",
+      "description": ""
+    },
+    {
+      "key": "mana_regen",
+      "description": ""
+    },
+    {
+      "key": "max_stamina",
+      "description": ""
+    },
+    {
+      "key": "stamina_regen",
+      "description": ""
+    },
+    {
+      "key": "mana_cost_efficiency",
+      "description": ""
+    },
+    {
+      "key": "cooldown_speed",
+      "description": ""
+    },
+    {
+      "key": "move_speed",
+      "description": ""
+    },
+    {
+      "key": "attack_speed_bonus",
+      "description": ""
+    },
+    {
+      "key": "skill_heal_bonus",
+      "description": ""
+    },
+    {
+      "key": "incoming_heal",
+      "description": ""
+    },
+    {
+      "key": "amitoi_heal",
+      "description": ""
+    },
+    {
+      "key": "incoming_recovery_effect",
+      "description": ""
+    },
+    {
+      "key": "recovery_crystal_heal",
+      "description": ""
+    }
+  ],
+  "resist": [
+    {
+      "key": "weaken_resistance",
+      "description": ""
+    },
+    {
+      "key": "stun_resistance",
+      "description": ""
+    },
+    {
+      "key": "petrification_resistance",
+      "description": ""
+    },
+    {
+      "key": "sleep_resistance",
+      "description": ""
+    },
+    {
+      "key": "silence_resistance",
+      "description": ""
+    },
+    {
+      "key": "terror_resistance",
+      "description": ""
+    },
+    {
+      "key": "bind_resistance",
+      "description": ""
+    },
+    {
+      "key": "collision_resistance",
+      "description": ""
+    }
+  ],
+  "chance": [
+    {
+      "key": "weaken_chance",
+      "description": ""
+    },
+    {
+      "key": "stun_chance",
+      "description": ""
+    },
+    {
+      "key": "petrification_chance",
+      "description": ""
+    },
+    {
+      "key": "sleep_chance",
+      "description": ""
+    },
+    {
+      "key": "silence_chance",
+      "description": ""
+    },
+    {
+      "key": "terror_chance",
+      "description": ""
+    },
+    {
+      "key": "bind_chance",
+      "description": ""
+    },
+    {
+      "key": "collision_chance",
+      "description": ""
+    }
+  ]
 }

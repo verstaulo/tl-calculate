@@ -2,9 +2,9 @@
 import { useAttributeStore } from './store/attributeStore.js';
 import CharacterAttributes from './components/CharacterAttributes/CharacterAttributes.vue';
 import CharacterEquipment from './components/CharacterEquipment/CharacterEquipment.vue';
-import CharacterStats from './components/CharacterStats/CharacterStats.vue';
 import WeaponMastery from './components/CharacterEquipment/Mastery/WeaponMastery.vue';
 import STATS_GROUPS from '../src/constants/STATS_GROUPS.json';
+import CharacterStatsList from './components/CharacterStats/CharacterStatsList.vue';
 
 const attributeStore = useAttributeStore();
 </script>
@@ -18,8 +18,15 @@ const attributeStore = useAttributeStore();
                 <weapon-mastery></weapon-mastery>
                 <character-equipment :items-keys="['secondary_weapon', 'main_weapon']" />
             </div>
-            <character-stats :group-names="STATS_GROUPS.mainGroup" />
-            <character-stats :group-names="STATS_GROUPS.secondaryGroup" class="row" />
+            <div class="mainView__statsGroup">
+                <character-stats-list :title="'weapons'" :items="STATS_GROUPS.weapons" />
+                <character-stats-list :title="'defense'" :items="STATS_GROUPS.defense" />
+            </div>
+            <character-stats-list :title="'attack'" :items="STATS_GROUPS.attack" />
+            <character-stats-list :title="'protection'" :items="STATS_GROUPS.protection" />
+            <character-stats-list :title="'survival'" :items="STATS_GROUPS.survival" class="colspan2" />
+            <character-stats-list :title="'chance'" :items="STATS_GROUPS.chance" />
+            <character-stats-list :title="'resist'" :items="STATS_GROUPS.resist" />
         </div>
         <div class="equipment">
             <character-equipment :items-keys="['head', 'cloak', 'body', 'gloves', 'legs', 'boots']" />
@@ -35,7 +42,7 @@ const attributeStore = useAttributeStore();
 
 .container {
     max-width: 1856px;
-    padding: 1rem;
+    padding: 0 1rem;
     margin: 0 auto;
 }
 
@@ -47,7 +54,6 @@ const attributeStore = useAttributeStore();
     gap: 1rem;
     padding: 2rem;
     position: relative;
-    flex-grow: 1;
 }
 
 .mainView__weaponGroup {
@@ -57,9 +63,9 @@ const attributeStore = useAttributeStore();
     position: relative;
 }
 
-.row {
-    grid-column-start: 1;
-    grid-column-end: -1;
+.mainView__statsGroup:deep(.characterStats:first-child) {
+    margin-bottom: 1rem;
+    min-height: 11rem;
 }
 
 .flex {
@@ -68,6 +74,16 @@ const attributeStore = useAttributeStore();
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
+}
+
+.colspan2 {
+    grid-column: span 2;
+}
+
+.colspan2:deep(.characterStats__list) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
 }
 
 @media (max-width: 1560px) {
@@ -86,6 +102,15 @@ const attributeStore = useAttributeStore();
 
 @media (max-width: 767px) {
     .mainView {
+        grid-template-columns: 1fr;
+    }
+
+    .colspan2 {
+        grid-column: unset;
+    }
+
+    .colspan2:deep(.characterStats__list) {
+        display: grid;
         grid-template-columns: 1fr;
     }
 }
