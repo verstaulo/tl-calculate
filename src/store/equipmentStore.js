@@ -1,4 +1,4 @@
-import { computed, ref, watch } from 'vue';
+import { computed, reactive, ref, watch } from 'vue';
 import { defineStore } from 'pinia';
 import { useMasteryStore } from './masteryStore.js';
 import mergeObjects from '../utils/mergeObjects';
@@ -7,7 +7,7 @@ import SET_BONUSES from '../constants/SET_BONUSES';
 
 export const useEquipmentStore = defineStore('equipmentStore', () => {
     const masteryStore = useMasteryStore();
-    const equipment = ref({
+    const equipment = reactive({
         main_weapon: null,
         secondary_weapon: null,
         body: null,
@@ -24,77 +24,52 @@ export const useEquipmentStore = defineStore('equipmentStore', () => {
     });
     const equipmentStats = computed(() =>
         mergeObjects(
-            mergeObjects(
-                equipment.value.main_weapon?.stats,
-                equipment.value.main_weapon?.selectedTraits,
-                equipment.value.main_weapon?.selectedResonance
-            ),
-            mergeObjects(
-                filteredSecondaryStats(equipment.value.secondary_weapon?.stats),
-                equipment.value.secondary_weapon?.selectedTraits,
-                equipment.value.secondary_weapon?.selectedResonance
-            ),
-            mergeObjects(
-                equipment.value.head?.stats,
-                equipment.value.head?.selectedTraits,
-                equipment.value.head?.selectedResonance
-            ),
-            mergeObjects(
-                equipment.value.legs?.stats,
-                equipment.value.legs?.selectedTraits,
-                equipment.value.legs?.selectedResonance
-            ),
-            mergeObjects(
-                equipment.value.body?.stats,
-                equipment.value.body?.selectedTraits,
-                equipment.value.body?.selectedResonance
-            ),
-            mergeObjects(
-                equipment.value.boots?.stats,
-                equipment.value.boots?.selectedTraits,
-                equipment.value.boots?.selectedResonance
-            ),
-            mergeObjects(
-                equipment.value.gloves?.stats,
-                equipment.value.gloves?.selectedTraits,
-                equipment.value.gloves?.selectedResonance
-            ),
-            mergeObjects(
-                equipment.value.cloak?.stats,
-                equipment.value.cloak?.selectedTraits,
-                equipment.value.cloak?.selectedResonance
-            ),
-            mergeObjects(
-                equipment.value.necklace?.stats,
-                equipment.value.necklace?.selectedTraits,
-                equipment.value.necklace?.selectedResonance
-            ),
-            mergeObjects(
-                equipment.value.belt?.stats,
-                equipment.value.belt?.selectedTraits,
-                equipment.value.belt?.selectedResonance
-            ),
-            mergeObjects(
-                equipment.value.bracelet?.stats,
-                equipment.value.bracelet?.selectedTraits,
-                equipment.value.bracelet?.selectedResonance
-            ),
-            mergeObjects(
-                equipment.value.ring_first?.stats,
-                equipment.value.ring_first?.selectedTraits,
-                equipment.value.ring_first?.selectedResonance
-            ),
-            mergeObjects(
-                equipment.value.ring_second?.stats,
-                equipment.value.ring_second?.selectedTraits,
-                equipment.value.ring_second?.selectedResonance
-            ),
+            equipment.main_weapon?.stats,
+            equipment.main_weapon?.selectedTraits,
+            equipment.main_weapon?.selectedResonance,
+            filteredSecondaryStats(equipment.secondary_weapon?.stats),
+            equipment.secondary_weapon?.selectedTraits,
+            equipment.secondary_weapon?.selectedResonance,
+            equipment.head?.stats,
+            equipment.head?.selectedTraits,
+            equipment.head?.selectedResonance,
+            equipment.legs?.stats,
+            equipment.legs?.selectedTraits,
+            equipment.legs?.selectedResonance,
+            equipment.body?.stats,
+            equipment.body?.selectedTraits,
+            equipment.body?.selectedResonance,
+            equipment.boots?.stats,
+            equipment.boots?.selectedTraits,
+            equipment.boots?.selectedResonance,
+            equipment.gloves?.stats,
+            equipment.gloves?.selectedTraits,
+            equipment.gloves?.selectedResonance,
+            equipment.cloak?.stats,
+            equipment.cloak?.selectedTraits,
+            equipment.cloak?.selectedResonance,
+            equipment.necklace?.stats,
+            equipment.necklace?.selectedTraits,
+            equipment.necklace?.selectedResonance,
+            equipment.belt?.stats,
+            equipment.belt?.selectedTraits,
+            equipment.belt?.selectedResonance,
+            equipment.bracelet?.stats,
+            equipment.bracelet?.selectedTraits,
+            equipment.bracelet?.selectedResonance,
+            equipment.ring_first?.stats,
+            equipment.ring_first?.selectedTraits,
+            equipment.ring_first?.selectedResonance,
+            equipment.ring_second?.stats,
+            equipment.ring_second?.selectedTraits,
+            equipment.ring_second?.selectedResonance,
             equipmentValidSetStats.value
         )
     );
+
     const equipmentSetCounter = computed(() => {
         const result = {};
-        Object.values(equipment.value).forEach((item) => {
+        Object.values(equipment).forEach((item) => {
             if (item?.setName) {
                 result[item.setName] = (result[item.setName] || 0) + 1;
             }
@@ -125,7 +100,6 @@ export const useEquipmentStore = defineStore('equipmentStore', () => {
         return result;
     });
     const equipmentValidSetStats = ref(null);
-    const equipmentResonanceStats = ref(null);
     watch(
         () => equipmentSetStats.value,
         (newValue, oldValue) => {
@@ -152,14 +126,14 @@ export const useEquipmentStore = defineStore('equipmentStore', () => {
     );
 
     function putOnEquipment(item, equipmentStateKey) {
-        if (equipment.value[equipmentStateKey]) {
+        if (equipment[equipmentStateKey]) {
             takeOffEquipment(equipmentStateKey);
         }
-        equipment.value[equipmentStateKey] = item;
+        equipment[equipmentStateKey] = item;
     }
 
     function takeOffEquipment(equipmentStateKey) {
-        equipment.value[equipmentStateKey] = null;
+        equipment[equipmentStateKey] = null;
         masteryStore.resetMasteryStore();
     }
 

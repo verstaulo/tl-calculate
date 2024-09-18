@@ -1,4 +1,4 @@
-import { computed, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import { defineStore } from 'pinia';
 import { useEquipmentStore } from './equipmentStore.js';
 import { useMasteryStore } from './masteryStore.js';
@@ -11,7 +11,7 @@ export const useAttributeStore = defineStore('attributeStore', () => {
     const equipmentStore = useEquipmentStore();
     const masteryStore = useMasteryStore();
 
-    const addedAttributeCount = ref({
+    const addedAttributeCount = reactive({
         strength: 0,
         dexterity: 0,
         wisdom: 0,
@@ -20,22 +20,22 @@ export const useAttributeStore = defineStore('attributeStore', () => {
 
     const attributeCount = computed(() => ({
         strength:
-            addedAttributeCount.value.strength +
+            addedAttributeCount.strength +
             (equipmentStore.equipmentStats?.strength || 0) +
             (masteryStore.masteryStats?.strength || 0) +
             10,
         dexterity:
-            addedAttributeCount.value.dexterity +
+            addedAttributeCount.dexterity +
             (equipmentStore.equipmentStats?.dexterity || 0) +
             (masteryStore.masteryStats?.dexterity || 0) +
             10,
         wisdom:
-            addedAttributeCount.value.wisdom +
+            addedAttributeCount.wisdom +
             (equipmentStore.equipmentStats?.wisdom || 0) +
             (masteryStore.masteryStats?.wisdom || 0) +
             10,
         perception:
-            addedAttributeCount.value.perception +
+            addedAttributeCount.perception +
             (equipmentStore.equipmentStats?.perception || 0) +
             (masteryStore.masteryStats?.perception || 0) +
             10
@@ -211,30 +211,30 @@ export const useAttributeStore = defineStore('attributeStore', () => {
     );
 
     function increaseAttributeCount(attributeName, count = 1) {
-        const currentValue = addedAttributeCount.value[attributeName];
+        const currentValue = addedAttributeCount[attributeName];
         const neededPointsCount = currentValue >= 20 && currentValue < 30 ? 2 : currentValue >= 30 ? 4 : 1;
 
         if (availableAttributesPoints.value - neededPointsCount < 0) return;
 
-        addedAttributeCount.value[attributeName] += count;
+        addedAttributeCount[attributeName] += count;
         availableAttributesPoints.value -= neededPointsCount;
     }
 
     function decreaseAttributeCount(attributeName, count = 1) {
-        const currentValue = addedAttributeCount.value[attributeName];
+        const currentValue = addedAttributeCount[attributeName];
         const neededPointsCount = currentValue >= 21 && currentValue <= 30 ? 2 : currentValue >= 31 ? 4 : 1;
 
         if (currentValue === 0 || availableAttributesPoints.value + neededPointsCount > 54) return;
 
-        addedAttributeCount.value[attributeName] -= count;
+        addedAttributeCount[attributeName] -= count;
         availableAttributesPoints.value += neededPointsCount;
     }
 
     function resetAttributes() {
-        addedAttributeCount.value.strength = 0;
-        addedAttributeCount.value.dexterity = 0;
-        addedAttributeCount.value.wisdom = 0;
-        addedAttributeCount.value.perception = 0;
+        addedAttributeCount.strength = 0;
+        addedAttributeCount.dexterity = 0;
+        addedAttributeCount.wisdom = 0;
+        addedAttributeCount.perception = 0;
         availableAttributesPoints.value = 54;
     }
 
