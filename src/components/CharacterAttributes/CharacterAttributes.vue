@@ -61,6 +61,9 @@ const attributeStore = useAttributeStore();
     flex-direction: column;
     gap: 2rem;
     min-width: 15rem;
+    background: var(--baseBackgroundColor);
+    border: 1px solid hsla(0, 0%, 100%, 0.05);
+    box-shadow: 0 5px 48px -9px rgba(0, 0, 0, 0.07);
 }
 
 .characterAttributes__title {

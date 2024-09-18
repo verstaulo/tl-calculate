@@ -215,16 +215,17 @@ onUnmounted(() => {
 .itemMenu {
     display: grid;
     gap: 1rem;
-    background-color: var(--neutral6);
     padding: var(--base-padding);
     width: v-bind(menuWidth);
     text-align: left;
     font-size: 14px;
     color: var(--neutral4);
-    border: 1px solid var(--neutral5);
     border-radius: 0.2rem;
-    box-shadow: 0 0 20px var(--neutral7);
     user-select: none;
+    backdrop-filter: blur(20px);
+    background: rgba(27, 28, 37, 0.4);
+    border: 1px solid hsla(0, 0%, 100%, 0.05);
+    box-shadow: 0 5px 48px -9px rgba(0, 0, 0, 0.07);
 }
 
 .itemMenu__level {

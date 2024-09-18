@@ -12,8 +12,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    --baseBackgroundColor: hsla(195, 9%, 9%, 1);
-    --baseForeGroundColor: hsla(195, 5%, 15%, 1);
+    --baseBackgroundColor: hsla(195, 9%, 9%, 0.6);
+    --baseForeGroundColor: hsla(195, 5%, 15%, 0.6);
 
     --neutral7: hsla(195, 9%, 9%, 1);
     --neutral77: 195, 9%, 9%;
@@ -144,4 +144,3 @@ html {
 .fa.fa-enchant:hover {
     color: hsla(142, 70%, 56%, 1);
 }
-

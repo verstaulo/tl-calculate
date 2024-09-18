@@ -92,7 +92,7 @@ const filteredResonanceEffects = computed(() => {
 
 <style scoped>
 .resonance__body {
-    background-color: hsla(var(--neutral77), 0.5);
+    background-color: var(--baseBackgroundColor);
     border-radius: 0.25rem;
 }
 

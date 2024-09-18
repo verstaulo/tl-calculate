@@ -111,7 +111,10 @@ const equipmentStore = useEquipmentStore();
 .characterStats {
     min-width: 300px;
     border-radius: var(--base-border-radius);
-    background-color: hsla(var(--neutral66), 0.4);
+    backdrop-filter: blur(33px);
+    background: rgba(27, 28, 37, 0.4);
+    border: 1px solid hsla(0, 0%, 100%, 0.05);
+    box-shadow: 0 5px 48px -9px rgba(0, 0, 0, 0.07);
 }
 
 .characterStats__title {
@@ -119,7 +122,7 @@ const equipmentStore = useEquipmentStore();
     text-align: center;
     user-select: none;
     padding: calc(var(--base-padding) / 2);
-    background-color: hsla(var(--neutral77), 0.6);
+    background-color: var(--baseForeGroundColor);
     mix-blend-mode: screen;
     border-top-left-radius: var(--base-border-radius);
     border-top-right-radius: var(--base-border-radius);

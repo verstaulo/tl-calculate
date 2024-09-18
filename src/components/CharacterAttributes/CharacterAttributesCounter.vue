@@ -33,14 +33,14 @@ const background = computed(() => {
 <template>
     <div class="attributeCounter">
         <div :style="attributeImage ? background : ''">
-            <tooltip>
+            <Tooltip>
                 <template #tooltip__trigger>
                     <CounterProgress :attributeCount="attributeCount" />
                 </template>
                 <template #tooltip__content>
                     <AttributeInfo :attribute-name="attributeName" />
                 </template>
-            </tooltip>
+            </Tooltip>
         </div>
         <div class="attributeCounter__controls">
             <button class="attributeCounter__button" @click="$emit('decrease')">
@@ -62,7 +62,6 @@ const background = computed(() => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
     min-width: 2.19rem;
 }
 
@@ -78,7 +77,6 @@ const background = computed(() => {
 .attributeCounter__button {
     width: 22px;
     height: 22px;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -44,14 +44,16 @@ const equipmentStore = useEquipmentStore();
 
 <style scoped>
 .info {
-    background-color: var(--neutral6);
+    background-color: var(--baseBackgroundColor);
     padding: var(--base-padding);
     width: 350px;
     text-align: left;
     font-size: 14px;
     color: var(--neutral4);
     border: 1px solid var(--neutral5);
-    box-shadow: 0 0 20px var(--neutral7);
+    border-radius: var(--base-border-radius);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 5px 48px -9px rgba(0, 0, 0, 0.07);
 }
 
 .info > * + * {
@@ -71,7 +73,6 @@ const equipmentStore = useEquipmentStore();
 }
 
 .info__statsItem {
-    position: relative;
     display: flex;
     justify-content: space-between;
     gap: 10px;

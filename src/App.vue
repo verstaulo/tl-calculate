@@ -56,6 +56,19 @@ const attributeStore = useAttributeStore();
     position: relative;
 }
 
+.mainView:before {
+    background-color: #246cf9;
+    opacity: 0.3;
+    content: '';
+    filter: blur(200px);
+    position: absolute;
+    height: 50%;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+
 .mainView__weaponGroup {
     display: flex;
     justify-content: center;

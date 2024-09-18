@@ -89,9 +89,9 @@ const setMenuMode = () => {
 
 .equipmentItem__button {
     display: block;
-    border: 1px solid var(--neutral5);
+    border: 1px solid hsla(0, 0%, 100%, 0.05);
     border-radius: 100%;
-    background-color: var(--neutral6);
+    background-color: var(--baseBackgroundColor);
     width: 4.75rem;
     height: 4.75rem;
 }

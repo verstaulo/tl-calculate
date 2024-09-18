@@ -2,7 +2,7 @@
 import storeKeyToTitle from '../../utils/storeKeyToTitle.js';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight';
-import { computed, ref, watch, watchEffect } from 'vue';
+import { computed, ref, watch } from 'vue';
 
 const props = defineProps({
     itemGroup: String,
@@ -157,7 +157,6 @@ watch(
 </template>
 <style scoped>
 .stats {
-    background-color: hsla(var(--neutral77), 0.95);
     color: var(--neutral1);
     border-radius: 0.2rem;
 }
@@ -197,10 +196,11 @@ watch(
 
 .stats--primary {
     padding: 0.5rem;
-    background-color: hsla(var(--neutral66), 0.5);
+    background-color: var(--baseForeGroundColor);
 }
 
 .stats--secondary {
     padding: 0.5rem;
+    background-color: var(--baseBackgroundColor);
 }
 </style>

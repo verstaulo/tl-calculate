@@ -26,7 +26,7 @@ defineProps({
     padding: 0.5rem;
     border-radius: 0.2rem;
     gap: 0.5rem;
-    background-color: hsla(var(--neutral77), 0.95);
+    background-color: var(--baseBackgroundColor);
 }
 
 .perk__wrapper {
