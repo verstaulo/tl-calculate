@@ -87,6 +87,7 @@ const background = computed(() => {
     align-self: flex-end;
     line-height: 0.5;
     cursor: pointer;
+    position: relative;
 }
 
 .attributeCounter__fine {
