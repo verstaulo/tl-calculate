@@ -67,10 +67,12 @@ const setMenuMode = () => {
                         draggable="false"
                         class="equipmentItem__image"
                         :class="{ 'equipmentItem__image-default': !equipmentStore.equipment[equipmentItemStateKey] }" />
+                    <span
+                        v-if="equipmentStore.equipment[equipmentItemStateKey]?.level > 0"
+                        class="equipmentItem__level">
+                        {{ equipmentStore.equipment[equipmentItemStateKey]?.level }}
+                    </span>
                 </button>
-                <div v-if="equipmentStore.equipment[equipmentItemStateKey]?.level > 0" class="equipmentItem__level">
-                    {{ equipmentStore.equipment[equipmentItemStateKey]?.level }}
-                </div>
             </template>
             <template #tooltip__content>
                 <ItemMenu :equipment-item-state-key="equipmentItemStateKey" :mode="menuMode" />
