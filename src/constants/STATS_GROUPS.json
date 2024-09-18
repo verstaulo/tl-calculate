@@ -36,61 +36,61 @@
   "defense": [
     {
       "key": "melee_defense",
-      "description": ""
+      "description": "Decreases damage taken from Melee attacks."
     },
     {
       "key": "ranged_defense",
-      "description": ""
+      "description": "Decreases damage taken from Ranged attacks."
     },
     {
       "key": "magic_defense",
-      "description": ""
+      "description": "Decreases damage taken from Magic attacks."
     }
   ],
   "attack": [
     {
       "key": "melee_hit",
-      "description": ""
+      "description": "Increases the Hit Rate of melee attacks and the chance to apply CC effects with melee skills. If your stat is higher than the target's Melee Evasion, for every 10 points of difference, Hit Rate increases by about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "ranged_hit",
-      "description": ""
+      "description": "Increases the Hit Rate of ranged attacks and the chance to apply CC effects with ranged skills. If your stat is higher than the target's Ranged Evasion, for every 10 points of difference, Hit Rate increases by about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "magic_hit",
-      "description": ""
+      "description": "Increases the Hit Rate of magic attacks and the chance to apply CC effects with magic skills. If your stat is higher than the target's Magic Evasion, for every 10 points of difference, Hit Rate increases by about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "melee_critical_hit",
-      "description": ""
+      "description": "Increases the chance of melee attacks landing as critical hits and dealing Max Damage. If your stat is higher than the target's Melee Endurance, for every 10 points of difference, Critical Hit Rate increases about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "ranged_critical_hit",
-      "description": ""
+      "description": "Increases the chance of ranged attacks landing as critical hits and dealing Max Damage. If your stat is higher than the target's Ranged Endurance, for every 10 points of difference, Critical Hit Rate increases about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "magic_critical_hit",
-      "description": ""
+      "description": "Increases the chance of magic attacks landing as critical hits and dealing Max Damage. If your stat is higher than the target's Magic Endurance, for every 10 points of difference, Critical Hit Rate increases about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "melee_heavy_attack_chance",
-      "description": ""
+      "description": "Increases the chance to deal double damage with Melee Heavy Attacks. If your stat is higher than the target's Melee Heavy Attack Evasion, for every 10 points of difference, increase the chance by about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "ranged_heavy_attack_chance",
-      "description": ""
+      "description": "Increases the chance to deal double damage with Ranged Heavy Attacks. If your stat is higher than the target's Ranged Heavy Attack Evasion, for every 10 points of difference, increase the chance by about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "magic_heavy_attack_chance",
-      "description": ""
+      "description": "Increases the chance to deal double damage with Magic Heavy Attacks. If your stat is higher than the target's Magic Heavy Attack Evasion, for every 10 points of difference, increase the chance by about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "skill_damage_boost",
-      "description": ""
+      "description": "Increases damage and recovery from skills. For every 10 points, chance increases about 1%. As the number increases, the efficiency decreases."
     },
     {
       "key": "damage_bonus",
-      "description": ""
+      "description": "Increases damage dealt."
     },
     {
       "key": "critical_damage_bonus",
@@ -98,7 +98,7 @@
     },
     {
       "key": "buff_duration",
-      "description": ""
+      "description": "Increases the duration of buff"
     },
     {
       "key": "shield_block_penetration_chance",
@@ -112,47 +112,47 @@
   "protection": [
     {
       "key": "melee_evasion",
-      "description": ""
+      "description": "Increases Melee Evasion chance. If your stat is higher than the target's Accuracy, for every 10 points of difference, chance increases by about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "ranged_evasion",
-      "description": ""
+      "description": "Increases Ranged Evasion chance. If your stat is higher than the target's Accuracy, for every 10 points of difference, chance increases by about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "magic_evasion",
-      "description": ""
+      "description": "Increases Magic Evasion chance. If your stat is higher than the target's Accuracy, for every 10 points of difference, chance increases by about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "melee_endurance",
-      "description": ""
+      "description": "Increases the chance of evading critical hits and taking Min Damage from melee attacks. If your stat is higher than the target's Melee Critical, for every 10 points of difference, chance increases about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "ranged_endurance",
-      "description": ""
+      "description": "Increases the chance of evading critical hits and taking Min Damage from ranged attacks. If your stat is higher than the target's Ranged Critical, for every 10 points of difference, chance increases about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "magic_endurance",
-      "description": ""
+      "description": "Increases the chance of evading critical hits and taking Min Damage from magic attacks. If your stat is higher than the target's Magic Critical, for every 10 points of difference, chance increases about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "melee_heavy_attack_evasion",
-      "description": ""
+      "description": "Increases Melee Heavy Attack Evasion chance. If your stat is higher than the target's Melee Heavy Attack chance, for every 10 points of difference, chance increases by about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "ranged_heavy_attack_evasion",
-      "description": ""
+      "description": "Increases Ranged Heavy Attack Evasion chance. If your stat is higher than the target's Ranged Heavy Attack chance, for every 10 points of difference, chance increases by about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "magic_heavy_attack_evasion",
-      "description": ""
+      "description": "Increases Magic Heavy Attack Evasion chance. If your stat is higher than the target's Magic Heavy Attack chance, for every 10 points of difference, chance increases by about 1%. As the difference increases, efficiency decreases."
     },
     {
       "key": "skill_damage_resistance",
-      "description": ""
+      "description": "Decreases damage taken from skills. For every 10 points, chance increases about 1%. As the number increases, the efficiency decreases."
     },
     {
       "key": "damage_reduction",
-      "description": ""
+      "description": "Decreases damage taken"
     },
     {
       "key": "critical_damage_reduction",
@@ -160,7 +160,7 @@
     },
     {
       "key": "debuff_duration",
-      "description": ""
+      "description": "Decreases the duration of incoming debuff effect"
     }
   ],
   "survival": [
@@ -170,7 +170,7 @@
     },
     {
       "key": "health_regen",
-      "description": ""
+      "description": "The amount of Health regenerated every 10s."
     },
     {
       "key": "max_mana",
@@ -178,7 +178,7 @@
     },
     {
       "key": "mana_regen",
-      "description": ""
+      "description": "The amount of Mana regenerated every 10s."
     },
     {
       "key": "max_stamina",
@@ -186,15 +186,15 @@
     },
     {
       "key": "stamina_regen",
-      "description": ""
+      "description": "The amount of Stamina regenerated every 10s."
     },
     {
       "key": "mana_cost_efficiency",
-      "description": ""
+      "description": "Reduces the amount of Mana used for skills."
     },
     {
       "key": "cooldown_speed",
-      "description": ""
+      "description": "Decreases cooldown more quickly"
     },
     {
       "key": "move_speed",
@@ -206,7 +206,7 @@
     },
     {
       "key": "skill_heal_bonus",
-      "description": ""
+      "description": "Increases the amount healed by skills"
     },
     {
       "key": "incoming_heal",
@@ -228,69 +228,69 @@
   "resist": [
     {
       "key": "weaken_resistance",
-      "description": ""
+      "description": "Increases the chance to resist Weaken Effects and reduce displacement distance. If your stat is higher than the target's Weaken Chance, for every 10 points of difference, chance increases about 4%, and distance is reduced by the same amount. As the difference increases, efficiency decreases."
     },
     {
       "key": "stun_resistance",
-      "description": ""
+      "description": "Increases the chance to resist Stun Effects and reduce displacement distance. If your stat is higher than the target's Stun Chance, for every 10 points of difference, chance increases about 4%, and distance is reduced by the same amount. As the difference increases, efficiency decreases."
     },
     {
       "key": "petrification_resistance",
-      "description": ""
+      "description": "Increases the chance to resist Petrification Effects and reduce displacement distance. If your stat is higher than the target's Petrification Chance, for every 10 points of difference, chance increases about 4%, and distance is reduced by the same amount. As the difference increases, efficiency decreases."
     },
     {
       "key": "sleep_resistance",
-      "description": ""
+      "description": "Increases the chance to resist Sleep Effects and reduce displacement distance. If your stat is higher than the target's Sleep Chance, for every 10 points of difference, chance increases about 4%, and distance is reduced by the same amount. As the difference increases, efficiency decreases."
     },
     {
       "key": "silence_resistance",
-      "description": ""
+      "description": "Increases the chance to resist Silence Effects and reduce displacement distance. If your stat is higher than the target's Silence Chance, for every 10 points of difference, chance increases about 4%, and distance is reduced by the same amount. As the difference increases, efficiency decreases."
     },
     {
       "key": "terror_resistance",
-      "description": ""
+      "description": "Increases the chance to resist Terror Effects and reduce displacement distance. If your stat is higher than the target's Terror Chance, for every 10 points of difference, chance increases about 4%, and distance is reduced by the same amount. As the difference increases, efficiency decreases."
     },
     {
       "key": "bind_resistance",
-      "description": ""
+      "description": "Increases the chance to resist Bind Effects and reduce displacement distance. If your stat is higher than the target's Bind Chance, for every 10 points of difference, chance increases about 4%, and distance is reduced by the same amount. As the difference increases, efficiency decreases."
     },
     {
       "key": "collision_resistance",
-      "description": ""
+      "description": "Increases the chance to resist Collision Effects and reduce displacement distance. If your stat is higher than the target's Collision Chance, for every 10 points of difference, chance increases about 4%, and distance is reduced by the same amount. As the difference increases, efficiency decreases."
     }
   ],
   "chance": [
     {
       "key": "weaken_chance",
-      "description": ""
+      "description": "Increases the chance to Weaken targets. If your stat is higher than the target's Weaken Resistance, for every 10 points of difference, chance increases about 4%. As the difference increases, efficiency decreases."
     },
     {
       "key": "stun_chance",
-      "description": ""
+      "description": "Increases the chance to Stun targets. If your stat is higher than the target's Stun Resistance, for every 10 points of difference, chance increases about 4%. As the difference increases, efficiency decreases."
     },
     {
       "key": "petrification_chance",
-      "description": ""
+      "description": "Increases the chance to Petrification targets. If your stat is higher than the target's Petrification Resistance, for every 10 points of difference, chance increases about 4%. As the difference increases, efficiency decreases."
     },
     {
       "key": "sleep_chance",
-      "description": ""
+      "description": "Increases the chance to Sleep targets. If your stat is higher than the target's Sleep Resistance, for every 10 points of difference, chance increases about 4%. As the difference increases, efficiency decreases."
     },
     {
       "key": "silence_chance",
-      "description": ""
+      "description": "Increases the chance to Silence targets. If your stat is higher than the target's Silence Resistance, for every 10 points of difference, chance increases about 4%. As the difference increases, efficiency decreases."
     },
     {
       "key": "terror_chance",
-      "description": ""
+      "description": "Increases the chance to Terror targets. If your stat is higher than the target's Terror Resistance, for every 10 points of difference, chance increases about 4%. As the difference increases, efficiency decreases."
     },
     {
       "key": "bind_chance",
-      "description": ""
+      "description": "Increases the chance to Bind targets. If your stat is higher than the target's Bind Resistance, for every 10 points of difference, chance increases about 4%. As the difference increases, efficiency decreases."
     },
     {
       "key": "collision_chance",
-      "description": ""
+      "description": "Increases the chance to Collision targets. If your stat is higher than the target's Collision Resistance, for every 10 points of difference, chance increases about 4%. As the difference increases, efficiency decreases."
     }
   ]
 }
