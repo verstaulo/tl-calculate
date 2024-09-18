@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 const props = defineProps({
     withFixedMode: { type: Boolean, default: false },
@@ -81,23 +81,18 @@ const updateTooltipPosition = (event) => {
         @mouseleave="hideTooltip"
         @click.stop="freezeTooltipPosition">
         <slot name="tooltip__trigger"></slot>
-        <transition>
-            <div
-                @click.stop
-                class="tooltip__content"
-                ref="tooltipContent"
-                :style="
-                    fixedModeStyles && isTooltipPositionFreeze ? { ...tooltipStyle, ...fixedModeStyles } : tooltipStyle
-                "
-                v-if="isTooltipVisible">
-                <slot name="tooltip__content"></slot>
-            </div>
-        </transition>
+    </div>
+    <div
+        @click.stop
+        class="tooltip__content"
+        ref="tooltipContent"
+        :style="fixedModeStyles && isTooltipPositionFreeze ? { ...tooltipStyle, ...fixedModeStyles } : tooltipStyle"
+        v-if="isTooltipVisible">
+        <slot name="tooltip__content"></slot>
     </div>
 </template>
 <style scoped>
 .tooltip-container {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,15 +101,5 @@ const updateTooltipPosition = (event) => {
 .tooltip__content {
     position: fixed;
     z-index: 99;
-}
-
-.v-enter-active,
-.v-leave-active {
-    transition: opacity 0.2s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-    opacity: 0;
 }
 </style>
